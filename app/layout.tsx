@@ -15,17 +15,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pay-clear.com"),
   title: {
-    default: "PayClear | Track. Control. Save.",
+    default: "PayClear | Private Subscription Tracker",
     template: "%s | PayClear",
   },
   description:
     "Track subscriptions, trials and recurring payments privately without linking your bank or creating an account.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/PayClear_icon_512512.png",
     apple: "/PayClear_icon_512512.png",
   },
   openGraph: {
-    title: "PayClear | Track. Control. Save.",
+    title: "PayClear | Private Subscription Tracker",
     description:
       "A private subscription tracker for renewals, free trials, shared bills and recurring spending insights without bank linking.",
     url: "https://www.pay-clear.com",
@@ -39,6 +42,13 @@ export const metadata: Metadata = {
         alt: "PayClear",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PayClear | Private Subscription Tracker",
+    description:
+      "Track subscriptions, trials and recurring payments privately without linking your bank.",
+    images: ["/payclear_icon_text.png"],
   },
 };
 

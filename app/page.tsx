@@ -3,11 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "PayClear | Track. Control. Save.",
+  title: "Private Subscription Tracker",
   description:
     "PayClear helps you track subscriptions, trials and recurring payments privately without linking your bank or creating an account.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "PayClear | Track. Control. Save.",
+    title: "PayClear | Private Subscription Tracker",
     description:
       "Track renewals, free trials, recurring bills and subscription spending with a private, local-first mobile app.",
     url: "https://www.pay-clear.com",
@@ -90,6 +93,67 @@ const lifetimePlan = [
   "One-time purchase",
 ];
 
+const faqs = [
+  {
+    question: "Does PayClear connect to my bank?",
+    answer:
+      "No. PayClear is a manual subscription tracker. It does not connect to your bank, scan transactions or ask for bank credentials.",
+  },
+  {
+    question: "Can PayClear remind me before free trials renew?",
+    answer:
+      "Yes. You can track free trial end dates and schedule local reminders before a trial turns into a paid charge.",
+  },
+  {
+    question: "Is PayClear another subscription?",
+    answer:
+      "No. PayClear has a free plan and an optional one-time Lifetime unlock for premium features.",
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.pay-clear.com/#website",
+      name: "PayClear",
+      url: "https://www.pay-clear.com/",
+      description:
+        "PayClear is a private subscription tracker for recurring payments, renewals and free trials.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.pay-clear.com/#app",
+      name: "PayClear",
+      applicationCategory: "FinanceApplication",
+      operatingSystem: "Android",
+      url: "https://www.pay-clear.com/",
+      downloadUrl: "https://play.google.com/store/apps/details?id=com.payclear.app",
+      image: "https://www.pay-clear.com/PayClear_icon_512512.png",
+      description:
+        "Private subscription tracker and bill reminder for free trials, renewals and recurring payments without bank linking.",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.pay-clear.com/#faq",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+
 function StoreButtons({ compact = false }: { compact?: boolean }) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row">
@@ -163,6 +227,10 @@ function Footer() {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7fbff] text-[#07143f]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Header />
 
       <section className="relative isolate min-h-[calc(100svh-73px)] overflow-hidden">
@@ -446,6 +514,23 @@ export default function Home() {
             </p>
           </div>
           <StoreButtons compact />
+        </div>
+      </section>
+
+      <section className="border-t border-[#d9e7f6] bg-[#f7fbff]">
+        <div className="mx-auto max-w-4xl px-5 py-16">
+          <p className="text-sm font-bold uppercase text-[#7b4dff]">FAQ</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">
+            Subscription tracking, without the usual trade-offs.
+          </h2>
+          <div className="mt-8 space-y-4">
+            {faqs.map((faq) => (
+              <article className="rounded-2xl border border-[#d9e7f6] bg-white p-6" key={faq.question}>
+                <h3 className="text-lg font-black">{faq.question}</h3>
+                <p className="mt-3 leading-7 text-[#53627a]">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
