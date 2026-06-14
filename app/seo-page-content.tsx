@@ -51,30 +51,30 @@ export function SeoPageContent({
   };
 
   return (
-    <main className="min-h-screen bg-[#f7fbff] text-[#07143f]">
+    <main className="min-h-screen overflow-x-hidden bg-[#f7fbff] text-[#07143f]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
       />
       <header className="border-b border-[#d9e7f6] bg-white">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
-          <Link className="relative block h-[86px] w-[317px] max-w-[62vw] overflow-hidden" href="/" aria-label="PayClear home">
+        <nav className="mx-auto flex min-h-[78px] max-w-5xl items-center justify-between gap-3 px-4 py-2 sm:min-h-[102px] sm:px-5 sm:py-4">
+          <Link className="relative block h-[62px] w-[229px] max-w-[68vw] shrink overflow-hidden sm:h-[86px] sm:w-[317px] sm:max-w-[62vw]" href="/" aria-label="PayClear home">
             <Image
               src="/payclear_icon_text.png"
               alt="PayClear"
               fill
               priority
-              sizes="317px"
+              sizes="(max-width: 640px) 229px, 317px"
               className="object-contain"
             />
           </Link>
-          <Link className="text-sm font-bold text-[#2b7cff]" href="/">
+          <Link className="shrink-0 text-sm font-bold text-[#2b7cff]" href="/">
             Home
           </Link>
         </nav>
       </header>
 
-      <article className="mx-auto max-w-5xl px-5 py-14 md:py-20">
+      <article className="mx-auto max-w-5xl px-5 py-10 md:py-20">
         <nav aria-label="Breadcrumb" className="mb-8 flex flex-wrap items-center gap-2 text-sm font-bold">
           <Link className="text-[#2b7cff]" href="/">
             Home
@@ -86,10 +86,10 @@ export function SeoPageContent({
         <div className="grid gap-10 md:grid-cols-[1fr_0.42fr] md:items-start">
           <div>
             <p className="text-sm font-bold uppercase text-[#7b4dff]">{eyebrow}</p>
-            <h1 className="mt-4 text-4xl font-black leading-tight tracking-tight md:text-6xl">
+            <h1 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl md:text-6xl">
               {title}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-[#415574]">{intro}</p>
+            <p className="mt-6 text-base leading-7 text-[#415574] sm:text-lg sm:leading-8">{intro}</p>
           </div>
           <aside className="rounded-2xl border border-[#d9e7f6] bg-white p-5 shadow-[0_14px_40px_rgba(7,20,63,0.06)]">
             <p className="text-sm font-black uppercase text-[#2b7cff]">Explore PayClear</p>
@@ -120,21 +120,21 @@ export function SeoPageContent({
           ))}
         </div>
 
-        <section className="mt-8 rounded-2xl bg-[#07143f] p-7 text-white md:p-9">
+        <section className="mt-8 rounded-2xl bg-[#07143f] p-6 text-white md:p-9">
           <h2 className="text-2xl font-black md:text-3xl">{cta}</h2>
           <p className="mt-4 max-w-3xl leading-8 text-[#dce8ff]">
             PayClear is available on Google Play. The App Store version is coming soon.
           </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <a
-              className="inline-flex items-center justify-center rounded-full bg-[#2b7cff] px-6 py-3 text-sm font-bold text-white"
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#2b7cff] px-6 py-3 text-center text-sm font-bold text-white sm:w-auto"
               href="https://play.google.com/store/apps/details?id=com.payclear.app"
               rel="noopener noreferrer"
               target="_blank"
             >
               Get it on Google Play
             </a>
-            <span className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-[#dce8ff]">
+            <span className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 px-6 py-3 text-center text-sm font-bold text-[#dce8ff] sm:w-auto">
               App Store coming soon
             </span>
           </div>

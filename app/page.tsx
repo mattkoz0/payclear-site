@@ -191,9 +191,9 @@ const structuredData = {
 
 function StoreButtons({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
+    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
       <a
-        className={`inline-flex items-center justify-center rounded-full bg-[#07143f] text-center font-bold text-white shadow-[0_18px_40px_rgba(7,20,63,0.2)] transition hover:bg-[#10245f] ${
+        className={`inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#07143f] text-center font-bold text-white shadow-[0_18px_40px_rgba(7,20,63,0.2)] transition hover:bg-[#10245f] sm:w-auto ${
           compact ? "px-5 py-3 text-sm" : "px-6 py-3 text-sm"
         }`}
         href="https://play.google.com/store/apps/details?id=com.payclear.app"
@@ -203,7 +203,7 @@ function StoreButtons({ compact = false }: { compact?: boolean }) {
         Get it on Google Play
       </a>
       <span
-        className={`inline-flex items-center justify-center rounded-full border border-[#bcd0ef] bg-white/80 text-center font-bold text-[#415574] ${
+        className={`inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#bcd0ef] bg-white/80 text-center font-bold text-[#415574] sm:w-auto ${
           compact ? "px-5 py-3 text-sm" : "px-6 py-3 text-sm"
         }`}
       >
@@ -216,14 +216,14 @@ function StoreButtons({ compact = false }: { compact?: boolean }) {
 function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-[#d9e7f6] bg-white/88 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
-        <Link className="relative block h-[86px] w-[317px] max-w-[62vw] overflow-hidden" href="/" aria-label="PayClear home">
+      <nav className="mx-auto flex min-h-[78px] max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:min-h-[102px] sm:px-5 sm:py-3">
+        <Link className="relative block h-[62px] w-[229px] max-w-[68vw] shrink overflow-hidden sm:h-[86px] sm:w-[317px] sm:max-w-[62vw]" href="/" aria-label="PayClear home">
           <Image
             src="/payclear_icon_text.png"
             alt="PayClear"
             fill
             priority
-            sizes="317px"
+            sizes="(max-width: 640px) 229px, 317px"
             className="object-contain"
           />
         </Link>
@@ -234,7 +234,7 @@ function Header() {
           <Link href="/support">Support</Link>
         </div>
         <Link
-          className="rounded-full bg-[#07143f] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(43,120,255,0.2)]"
+          className="shrink-0 rounded-full bg-[#07143f] px-3 py-2 text-xs font-semibold text-white shadow-[0_10px_30px_rgba(43,120,255,0.2)] sm:px-4 sm:text-sm"
           href="/privacy"
         >
           Privacy
@@ -247,9 +247,9 @@ function Header() {
 function Footer() {
   return (
     <footer className="border-t border-[#d9e7f6] bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#53627a] md:flex-row md:items-center md:justify-between">
-          <p>© 2026 PayClear. Track. Control. Save.</p>
-          <div className="flex flex-wrap gap-5 font-semibold">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#53627a] md:flex-row md:items-center md:justify-between">
+        <p>© 2026 PayClear. Track. Control. Save.</p>
+        <div className="flex flex-wrap gap-5 font-semibold">
           <Link href="/subscription-tracker">Subscription Tracker</Link>
           <Link href="/privacy">Privacy Policy</Link>
           <Link href="/terms">Terms of Use</Link>
@@ -262,14 +262,14 @@ function Footer() {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f7fbff] text-[#07143f]">
+    <main className="min-h-screen overflow-x-hidden bg-[#f7fbff] text-[#07143f]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <Header />
 
-      <section className="relative isolate min-h-[calc(100svh-73px)] overflow-hidden">
+      <section className="relative isolate min-h-[calc(100svh-78px)] overflow-hidden sm:min-h-[calc(100svh-102px)]">
         <Image
           src="/GPS - 1.jpg"
           alt=""
@@ -279,7 +279,7 @@ export default function Home() {
           className="object-cover object-[72%_center] opacity-28 md:opacity-42"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#f7fbff_0%,rgba(247,251,255,0.94)_38%,rgba(247,251,255,0.58)_70%,rgba(247,251,255,0.18)_100%)]" />
-        <div className="relative mx-auto grid min-h-[calc(100svh-73px)] max-w-7xl items-center gap-10 px-5 py-14 md:grid-cols-[0.94fr_0.72fr]">
+        <div className="relative mx-auto grid min-h-[calc(100svh-78px)] max-w-7xl items-center gap-10 px-5 py-10 sm:min-h-[calc(100svh-102px)] sm:py-14 md:grid-cols-[0.94fr_0.72fr]">
           <div className="max-w-3xl">
             <div className="mb-8 flex items-center gap-4">
               <Image
@@ -289,12 +289,12 @@ export default function Home() {
                 height={72}
                 className="rounded-2xl shadow-[0_18px_45px_rgba(43,120,255,0.18)]"
               />
-              <p className="text-sm font-bold uppercase text-[#2b7cff]">Track. Control. Save.</p>
+              <p className="text-xs font-bold uppercase text-[#2b7cff] sm:text-sm">Track. Control. Save.</p>
             </div>
-            <h1 className="max-w-4xl text-5xl font-black leading-[1.02] md:text-7xl">
+            <h1 className="max-w-4xl text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
               Track subscriptions without linking your bank.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#415574] md:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#415574] sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">
               PayClear helps you organize subscriptions, trials and recurring
               bills with local reminders, spending limits, bill splits and clear
               recurring spend insights. No account, no bank sync and no PayClear
@@ -365,7 +365,7 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
               Decide before a renewal becomes a surprise.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#415574]">
+            <p className="mt-5 text-base leading-7 text-[#415574] sm:text-lg sm:leading-8">
               Add the services you want to track, keep renewal dates visible and
               schedule one or more local reminders before a charge arrives.
               Trials can be reviewed, adjusted, marked as regular or canceled.
@@ -374,7 +374,7 @@ export default function Home() {
           <div className="grid gap-5 sm:grid-cols-2">
             {["/GPS - 2.jpg", "/GPS - 3.jpg"].map((src, index) => (
               <div
-                className="relative aspect-[9/16] overflow-hidden rounded-[1.8rem] border border-white bg-white shadow-[0_24px_70px_rgba(7,20,63,0.16)]"
+                className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[1.8rem] border border-white bg-white shadow-[0_24px_70px_rgba(7,20,63,0.16)] sm:max-w-none"
                 key={src}
               >
                 <Image
@@ -385,7 +385,7 @@ export default function Home() {
                       : "PayClear free trial review screen"
                   }
                   fill
-                  sizes="(min-width: 768px) 300px, 45vw"
+                  sizes="(min-width: 768px) 300px, (min-width: 640px) 45vw, 320px"
                   className="object-cover"
                 />
               </div>
@@ -399,7 +399,7 @@ export default function Home() {
           <div className="order-2 grid gap-5 sm:grid-cols-2 md:order-1">
             {["/GPS - 4.jpg", "/GPS - 5.jpg"].map((src, index) => (
               <div
-                className="relative aspect-[9/16] overflow-hidden rounded-[1.8rem] border border-[#d9e7f6] bg-white shadow-[0_24px_70px_rgba(7,20,63,0.14)]"
+                className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[1.8rem] border border-[#d9e7f6] bg-white shadow-[0_24px_70px_rgba(7,20,63,0.14)] sm:max-w-none"
                 key={src}
               >
                 <Image
@@ -410,7 +410,7 @@ export default function Home() {
                       : "PayClear spending limit and savings simulator screen"
                   }
                   fill
-                  sizes="(min-width: 768px) 300px, 45vw"
+                  sizes="(min-width: 768px) 300px, (min-width: 640px) 45vw, 320px"
                   className="object-cover"
                 />
               </div>
@@ -421,7 +421,7 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
               Split shared bills and see what cancellation could save.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#415574]">
+            <p className="mt-5 text-base leading-7 text-[#415574] sm:text-lg sm:leading-8">
               PayClear includes practical tools for recurring costs: bill split
               cards for shared services, configurable limits, near-limit alerts
               and a cancellation savings view for active subscriptions.
@@ -437,7 +437,7 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
               No bank sync. No login flow. Local database.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#c7d7ef]">
+            <p className="mt-5 text-base leading-7 text-[#c7d7ef] sm:text-lg sm:leading-8">
               PayClear is built for manual tracking. It does not require an
               account, does not connect to your bank and keeps your tracker data
               on your device.
@@ -450,12 +450,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[1.8rem] border border-white/14 bg-white/8 shadow-[0_28px_80px_rgba(0,0,0,0.28)] md:ml-auto md:max-w-[380px]">
+          <div className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[1.8rem] border border-white/14 bg-white/8 shadow-[0_28px_80px_rgba(0,0,0,0.28)] md:ml-auto md:max-w-[380px]">
             <Image
               src="/GPS - 7.jpg"
               alt="PayClear privacy promise screen"
               fill
-              sizes="380px"
+              sizes="(min-width: 768px) 380px, 320px"
               className="object-cover"
             />
           </div>
@@ -469,7 +469,7 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
               Useful for free. One-time unlock when you want more.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#415574]">
+            <p className="mt-5 text-base leading-7 text-[#415574] sm:text-lg sm:leading-8">
               PayClear is built to reduce subscription stress, so premium is a
               Lifetime unlock instead of another monthly bill. Free users can
               track the core value first.
@@ -519,7 +519,7 @@ export default function Home() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {screenshots.map((screen) => (
               <article
-                className="rounded-[1.8rem] border border-[#d9e7f6] bg-white p-3 shadow-[0_18px_55px_rgba(7,20,63,0.1)]"
+                className="mx-auto w-full max-w-[320px] rounded-[1.8rem] border border-[#d9e7f6] bg-white p-3 shadow-[0_18px_55px_rgba(7,20,63,0.1)] sm:max-w-none"
                 key={screen.src}
               >
                 <div className="relative aspect-[9/16] overflow-hidden rounded-[1.35rem]">
@@ -527,7 +527,7 @@ export default function Home() {
                     src={screen.src}
                     alt={screen.alt}
                     fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 320px"
                     className="object-cover"
                   />
                 </div>
