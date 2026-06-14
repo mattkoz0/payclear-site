@@ -58,13 +58,13 @@ export function SeoPageContent({
       />
       <header className="border-b border-[#d9e7f6] bg-white">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
-          <Link className="relative block h-12 w-44 overflow-hidden" href="/" aria-label="PayClear home">
+          <Link className="relative block h-[86px] w-[317px] max-w-[62vw] overflow-hidden" href="/" aria-label="PayClear home">
             <Image
               src="/payclear_icon_text.png"
               alt="PayClear"
               fill
               priority
-              sizes="176px"
+              sizes="317px"
               className="object-contain"
             />
           </Link>
