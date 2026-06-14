@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { seoLandingPages } from "./seo-pages";
 
 export const metadata: Metadata = {
-  title: "Private Subscription Tracker",
+  title: "Private Subscription Tracker Without Bank Linking",
   description:
-    "PayClear helps you track subscriptions, trials and recurring payments privately without linking your bank or creating an account.",
+    "PayClear helps you track subscriptions, free trials and recurring payments privately without linking your bank or creating an account.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "PayClear | Private Subscription Tracker",
+    title: "PayClear | Private Subscription Tracker Without Bank Linking",
     description:
       "Track renewals, free trials, recurring bills and subscription spending with a private, local-first mobile app.",
     url: "https://www.pay-clear.com",
@@ -93,29 +94,6 @@ const lifetimePlan = [
   "One-time purchase",
 ];
 
-const seoPages = [
-  {
-    href: "/subscription-tracker",
-    title: "Subscription tracker",
-    text: "Track subscriptions, renewals and recurring costs in one private place.",
-  },
-  {
-    href: "/free-trial-reminder",
-    title: "Free trial reminder",
-    text: "Review free trial end dates before the first paid charge.",
-  },
-  {
-    href: "/bill-reminder",
-    title: "Bill reminder",
-    text: "Remember repeating bills, shared subscriptions and upcoming renewals.",
-  },
-  {
-    href: "/no-bank-subscription-tracker",
-    title: "No-bank tracker",
-    text: "Track recurring payments without linking your bank or creating an account.",
-  },
-];
-
 const faqs = [
   {
     question: "Does PayClear connect to my bank?",
@@ -138,28 +116,59 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://www.pay-clear.com/#organization",
+      name: "PayClear",
+      url: "https://www.pay-clear.com/",
+      logo: "https://www.pay-clear.com/PayClear_icon_512512.png",
+      sameAs: ["https://play.google.com/store/apps/details?id=com.payclear.app"],
+    },
+    {
       "@type": "WebSite",
       "@id": "https://www.pay-clear.com/#website",
       name: "PayClear",
       url: "https://www.pay-clear.com/",
       description:
         "PayClear is a private subscription tracker for recurring payments, renewals and free trials.",
+      publisher: {
+        "@id": "https://www.pay-clear.com/#organization",
+      },
     },
     {
       "@type": "SoftwareApplication",
       "@id": "https://www.pay-clear.com/#app",
       name: "PayClear",
       applicationCategory: "FinanceApplication",
+      applicationSubCategory: "Subscription tracker",
       operatingSystem: "Android",
       url: "https://www.pay-clear.com/",
       downloadUrl: "https://play.google.com/store/apps/details?id=com.payclear.app",
       image: "https://www.pay-clear.com/PayClear_icon_512512.png",
+      screenshot: [
+        "https://www.pay-clear.com/GPS%20-%201.jpg",
+        "https://www.pay-clear.com/GPS%20-%202.jpg",
+        "https://www.pay-clear.com/GPS%20-%205.jpg",
+        "https://www.pay-clear.com/GPS%20-%206.jpg",
+      ],
       description:
         "Private subscription tracker and bill reminder for free trials, renewals and recurring payments without bank linking.",
+      featureList: [
+        "Manual subscription tracking",
+        "Free trial reminders",
+        "Recurring bill reminders",
+        "Spending limits",
+        "Shared bill splitting",
+        "Cancellation savings simulator",
+        "CSV export and local backups",
+      ],
+      publisher: {
+        "@id": "https://www.pay-clear.com/#organization",
+      },
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
       },
     },
     {
@@ -173,18 +182,6 @@ const structuredData = {
           text: faq.answer,
         },
       })),
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.pay-clear.com/#breadcrumb",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://www.pay-clear.com/",
-        },
-      ],
     },
   ],
 };
@@ -229,6 +226,7 @@ function Header() {
         </Link>
         <div className="hidden items-center gap-7 text-sm font-semibold text-[#415574] md:flex">
           <a href="#features">Features</a>
+          <a href="#guides">Guides</a>
           <a href="#privacy">Privacy</a>
           <a href="#screens">Screens</a>
           <Link href="/support">Support</Link>
@@ -250,7 +248,9 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#53627a] md:flex-row md:items-center md:justify-between">
         <p>© 2026 PayClear. Track. Control. Save.</p>
         <div className="flex flex-wrap gap-5 font-semibold">
-          <Link href="/subscription-tracker">Subscription Tracker</Link>
+          <Link href="/subscription-tracker">Private Subscription Tracker</Link>
+          <Link href="/free-trial-reminder">Free Trial Reminder</Link>
+          <Link href="/subscription-tracker-android">Android App</Link>
           <Link href="/privacy">Privacy Policy</Link>
           <Link href="/terms">Terms of Use</Link>
           <Link href="/support">Support</Link>
@@ -304,12 +304,12 @@ export default function Home() {
               <StoreButtons />
             </div>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <a className="text-center text-sm font-bold text-[#2b7cff]" href="#screens">
-                View app screens
-              </a>
-              <a className="text-center text-sm font-bold text-[#415574]" href="#features">
-                Explore features
-              </a>
+              <Link className="text-center text-sm font-bold text-[#2b7cff]" href="/subscription-tracker">
+                Private subscription tracker
+              </Link>
+              <Link className="text-center text-sm font-bold text-[#415574]" href="/free-trial-reminder">
+                Free trial reminder app
+              </Link>
             </div>
             <div className="mt-9 grid gap-3 sm:grid-cols-2">
               {highlights.map((item) => (
@@ -352,6 +352,44 @@ export default function Home() {
               >
                 <h3 className="text-xl font-black">{feature.title}</h3>
                 <p className="mt-3 leading-7 text-[#53627a]">{feature.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7fbff]">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase text-[#2b7cff]">How PayClear works</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+              Manual tracking, clear reminders and no bank access.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-[#415574] sm:text-lg sm:leading-8">
+              PayClear is intentionally different from bank-connected finance apps.
+              You enter the recurring payments you care about, keep dates visible
+              and use local tools to review renewals before they become background
+              spending.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Add subscriptions manually",
+                text: "Create a private list of streaming services, app plans, cloud tools, memberships and other recurring payments.",
+              },
+              {
+                title: "Review renewals and trials",
+                text: "Track next payment dates, free trial endings and reminder timing without sharing transaction history.",
+              },
+              {
+                title: "Decide what to keep",
+                text: "Use spending limits, bill splits and cancellation savings to understand what deserves another month.",
+              },
+            ].map((item) => (
+              <article className="rounded-2xl border border-[#d9e7f6] bg-white p-6 shadow-[0_12px_35px_rgba(7,20,63,0.05)]" key={item.title}>
+                <h3 className="text-xl font-black">{item.title}</h3>
+                <p className="mt-3 leading-7 text-[#53627a]">{item.text}</p>
               </article>
             ))}
           </div>
@@ -462,6 +500,37 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#eef9ff]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-[0.85fr_1fr] md:items-start md:py-20">
+          <div>
+            <p className="text-sm font-bold uppercase text-[#7b4dff]">Private, not automatic</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+              PayClear helps you track subscriptions. It does not read your bank account.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-[#415574] sm:text-lg sm:leading-8">
+              The privacy promise is simple and specific: PayClear is a manual
+              subscription tracker. It is useful when you want recurring payment
+              visibility without connecting Plaid, card accounts or transaction
+              feeds.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              "No bank credentials",
+              "No transaction scanning",
+              "No account required for core tracking",
+              "Local-first tracker data",
+              "Manual backup and CSV export",
+              "Google Play available now",
+            ].map((item) => (
+              <div className="rounded-2xl border border-[#d9e7f6] bg-white p-5 text-sm font-black text-[#07143f]" key={item}>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-[0.82fr_1fr] md:items-start md:py-20">
           <div>
@@ -538,7 +607,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-[#d9e7f6] bg-white">
+      <section id="guides" className="border-t border-[#d9e7f6] bg-white">
         <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase text-[#2b7cff]">Guides</p>
@@ -547,7 +616,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {seoPages.map((page) => (
+            {seoLandingPages.map((page) => (
               <Link
                 className="rounded-2xl border border-[#d9e7f6] bg-[#fbfdff] p-5 shadow-[0_12px_35px_rgba(7,20,63,0.05)] transition hover:border-[#2b7cff]"
                 href={page.href}

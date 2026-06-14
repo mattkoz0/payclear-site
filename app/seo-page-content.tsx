@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { seoLandingPages } from "./seo-pages";
 
 type SeoPageProps = {
   eyebrow: string;
@@ -14,13 +15,6 @@ type SeoPageProps = {
   cta: string;
 };
 
-const relatedPages = [
-  { href: "/subscription-tracker", label: "Subscription tracker" },
-  { href: "/free-trial-reminder", label: "Free trial reminder" },
-  { href: "/bill-reminder", label: "Bill reminder" },
-  { href: "/no-bank-subscription-tracker", label: "No-bank tracker" },
-];
-
 export function SeoPageContent({
   eyebrow,
   title,
@@ -31,21 +25,42 @@ export function SeoPageContent({
   cta,
 }: SeoPageProps) {
   const pageUrl = `https://www.pay-clear.com${path}`;
-  const breadcrumbData = {
+  const pageData = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
+    "@graph": [
       {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.pay-clear.com/",
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: title,
+        description: intro,
+        isPartOf: {
+          "@id": "https://www.pay-clear.com/#website",
+        },
+        about: {
+          "@id": "https://www.pay-clear.com/#app",
+        },
+        breadcrumb: {
+          "@id": `${pageUrl}#breadcrumb`,
+        },
       },
       {
-        "@type": "ListItem",
-        position: 2,
-        name: breadcrumb,
-        item: pageUrl,
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.pay-clear.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: breadcrumb,
+            item: pageUrl,
+          },
+        ],
       },
     ],
   };
@@ -54,7 +69,7 @@ export function SeoPageContent({
     <main className="min-h-screen overflow-x-hidden bg-[#f7fbff] text-[#07143f]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageData) }}
       />
       <header className="border-b border-[#d9e7f6] bg-white">
         <nav className="mx-auto flex min-h-[78px] max-w-5xl items-center justify-between gap-3 px-4 py-2 sm:min-h-[102px] sm:px-5 sm:py-4">
@@ -94,7 +109,7 @@ export function SeoPageContent({
           <aside className="rounded-2xl border border-[#d9e7f6] bg-white p-5 shadow-[0_14px_40px_rgba(7,20,63,0.06)]">
             <p className="text-sm font-black uppercase text-[#2b7cff]">Explore PayClear</p>
             <div className="mt-4 grid gap-3">
-              {relatedPages.map((page) => (
+              {seoLandingPages.filter((page) => page.href !== path).slice(0, 6).map((page) => (
                 <Link
                   className="rounded-xl border border-[#d9e7f6] px-4 py-3 text-sm font-bold text-[#07143f] transition hover:border-[#2b7cff]"
                   href={page.href}

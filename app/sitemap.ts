@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { seoLandingPages } from "./seo-pages";
 
 const baseUrl = "https://www.pay-clear.com";
 const lastModified = new Date("2026-06-14");
@@ -29,29 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.5,
     },
-    {
-      url: `${baseUrl}/subscription-tracker`,
+    ...seoLandingPages.map((page, index) => ({
+      url: `${baseUrl}${page.href}`,
       lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/free-trial-reminder`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/bill-reminder`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/no-bank-subscription-tracker`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
+      changeFrequency: "monthly" as const,
+      priority: index === 0 ? 0.9 : 0.85,
+    })),
   ];
 }

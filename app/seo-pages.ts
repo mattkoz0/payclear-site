@@ -1,0 +1,50 @@
+export const seoLandingPages = [
+  {
+    href: "/subscription-tracker",
+    label: "Subscription tracker",
+    title: "Subscription tracker",
+    text: "Track subscriptions, renewals and recurring costs in one private place.",
+  },
+  {
+    href: "/free-trial-reminder",
+    label: "Free trial reminder",
+    title: "Free trial reminder",
+    text: "Review free trial end dates before the first paid charge.",
+  },
+  {
+    href: "/bill-reminder",
+    label: "Bill reminder",
+    title: "Bill reminder",
+    text: "Remember repeating bills, shared subscriptions and upcoming renewals.",
+  },
+  {
+    href: "/no-bank-subscription-tracker",
+    label: "No-bank tracker",
+    title: "No-bank tracker",
+    text: "Track recurring payments without linking your bank or creating an account.",
+  },
+  {
+    href: "/manual-subscription-tracker",
+    label: "Manual tracker",
+    title: "Manual subscription tracker",
+    text: "Add services yourself and keep subscription tracking private by design.",
+  },
+  {
+    href: "/subscription-reminder-app",
+    label: "Reminder app",
+    title: "Subscription reminder app",
+    text: "Use local reminders to review renewals and trial endings before charges arrive.",
+  },
+  {
+    href: "/subscription-spending-tracker",
+    label: "Spending tracker",
+    title: "Subscription spending tracker",
+    text: "Understand monthly recurring spend, limits and cancellation savings.",
+  },
+  {
+    href: "/subscription-tracker-android",
+    label: "Android tracker",
+    title: "Subscription tracker for Android",
+    text: "Track subscriptions on Android with PayClear's private, local-first app.",
+  },
+];

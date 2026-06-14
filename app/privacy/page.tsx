@@ -109,9 +109,9 @@ export default function PrivacyPage() {
           </p>
           <a
             className="mt-4 inline-flex rounded-xl bg-[#0f172a] px-5 py-3 text-sm font-semibold text-white"
-            href="mailto:payclear-app@outlook.com"
+            href="mailto:support@pay-clear.com"
           >
-            payclear-app@outlook.com
+            support@pay-clear.com
           </a>
         </section>
 
