@@ -93,6 +93,29 @@ const lifetimePlan = [
   "One-time purchase",
 ];
 
+const seoPages = [
+  {
+    href: "/subscription-tracker",
+    title: "Subscription tracker",
+    text: "Track subscriptions, renewals and recurring costs in one private place.",
+  },
+  {
+    href: "/free-trial-reminder",
+    title: "Free trial reminder",
+    text: "Review free trial end dates before the first paid charge.",
+  },
+  {
+    href: "/bill-reminder",
+    title: "Bill reminder",
+    text: "Remember repeating bills, shared subscriptions and upcoming renewals.",
+  },
+  {
+    href: "/no-bank-subscription-tracker",
+    title: "No-bank tracker",
+    text: "Track recurring payments without linking your bank or creating an account.",
+  },
+];
+
 const faqs = [
   {
     question: "Does PayClear connect to my bank?",
@@ -212,9 +235,10 @@ function Header() {
 function Footer() {
   return (
     <footer className="border-t border-[#d9e7f6] bg-white">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#53627a] md:flex-row md:items-center md:justify-between">
-        <p>© 2026 PayClear. Track. Control. Save.</p>
-        <div className="flex flex-wrap gap-5 font-semibold">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#53627a] md:flex-row md:items-center md:justify-between">
+          <p>© 2026 PayClear. Track. Control. Save.</p>
+          <div className="flex flex-wrap gap-5 font-semibold">
+          <Link href="/subscription-tracker">Subscription Tracker</Link>
           <Link href="/privacy">Privacy Policy</Link>
           <Link href="/terms">Terms of Use</Link>
           <Link href="/support">Support</Link>
@@ -497,6 +521,29 @@ export default function Home() {
                 </div>
                 <h3 className="px-2 pt-4 text-lg font-black">{screen.title}</h3>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[#d9e7f6] bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase text-[#2b7cff]">Guides</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+              Learn how PayClear helps with recurring payments.
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {seoPages.map((page) => (
+              <Link
+                className="rounded-2xl border border-[#d9e7f6] bg-[#fbfdff] p-5 shadow-[0_12px_35px_rgba(7,20,63,0.05)] transition hover:border-[#2b7cff]"
+                href={page.href}
+                key={page.href}
+              >
+                <h3 className="text-lg font-black">{page.title}</h3>
+                <p className="mt-3 leading-7 text-[#53627a]">{page.text}</p>
+              </Link>
             ))}
           </div>
         </div>

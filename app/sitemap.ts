@@ -29,5 +29,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/subscription-tracker`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/free-trial-reminder`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/bill-reminder`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/no-bank-subscription-tracker`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
   ];
 }
