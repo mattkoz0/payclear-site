@@ -56,22 +56,22 @@ const featureCards = [
 
 const screenshots = [
   {
-    src: "/GPS - 1.jpg",
+    src: "/payclear-dashboard-subscription-tracker.avif",
     alt: "PayClear dashboard with monthly recurring spend and next payment",
     title: "Dashboard",
   },
   {
-    src: "/GPS - 2.jpg",
+    src: "/payclear-renewal-reminder-settings.avif",
     alt: "PayClear reminder settings with local renewal reminders",
     title: "Reminders",
   },
   {
-    src: "/GPS - 5.jpg",
+    src: "/payclear-spending-limits-savings.avif",
     alt: "PayClear spending limit and cancellation savings simulator",
     title: "Limits",
   },
   {
-    src: "/GPS - 6.jpg",
+    src: "/payclear-subscription-spending-insights.avif",
     alt: "PayClear recurring spending insights by currency, profile and category",
     title: "Insights",
   },
@@ -145,10 +145,10 @@ const structuredData = {
       downloadUrl: "https://play.google.com/store/apps/details?id=com.payclear.app",
       image: "https://www.pay-clear.com/PayClear_icon_512512.png",
       screenshot: [
-        "https://www.pay-clear.com/GPS%20-%201.jpg",
-        "https://www.pay-clear.com/GPS%20-%202.jpg",
-        "https://www.pay-clear.com/GPS%20-%205.jpg",
-        "https://www.pay-clear.com/GPS%20-%206.jpg",
+        "https://www.pay-clear.com/payclear-dashboard-subscription-tracker.avif",
+        "https://www.pay-clear.com/payclear-renewal-reminder-settings.avif",
+        "https://www.pay-clear.com/payclear-spending-limits-savings.avif",
+        "https://www.pay-clear.com/payclear-subscription-spending-insights.avif",
       ],
       description:
         "Private subscription tracker and bill reminder for free trials, renewals and recurring payments without bank linking.",
@@ -216,7 +216,7 @@ function Header() {
       <nav className="mx-auto flex min-h-[78px] max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:min-h-[102px] sm:px-5 sm:py-3">
         <Link className="relative block h-[62px] w-[229px] max-w-[68vw] shrink overflow-hidden sm:h-[86px] sm:w-[317px] sm:max-w-[62vw]" href="/" aria-label="PayClear home">
           <Image
-            src="/payclear_icon_text.png"
+            src="/payclear-logo-text-header.png"
             alt="PayClear"
             fill
             priority
@@ -271,7 +271,7 @@ export default function Home() {
 
       <section className="relative isolate min-h-[calc(100svh-78px)] overflow-hidden sm:min-h-[calc(100svh-102px)]">
         <Image
-          src="/GPS - 1.jpg"
+          src="/payclear-dashboard-subscription-tracker.avif"
           alt=""
           fill
           priority
@@ -324,7 +324,7 @@ export default function Home() {
           <div className="hidden md:flex md:justify-end">
             <div className="relative aspect-[9/16] w-full max-w-[360px] overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_28px_90px_rgba(7,20,63,0.22)]">
               <Image
-                src="/GPS - 1.jpg"
+                src="/payclear-dashboard-subscription-tracker.avif"
                 alt="PayClear app dashboard showing monthly recurring spend"
                 fill
                 priority
@@ -410,7 +410,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
-            {["/GPS - 2.jpg", "/GPS - 3.jpg"].map((src, index) => (
+            {["/payclear-renewal-reminder-settings.avif", "/payclear-free-trial-review.avif"].map((src, index) => (
               <div
                 className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[1.8rem] border border-white bg-white shadow-[0_24px_70px_rgba(7,20,63,0.16)] sm:max-w-none"
                 key={src}
@@ -435,7 +435,7 @@ export default function Home() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1fr_0.8fr] md:items-center md:py-20">
           <div className="order-2 grid gap-5 sm:grid-cols-2 md:order-1">
-            {["/GPS - 4.jpg", "/GPS - 5.jpg"].map((src, index) => (
+            {["/payclear-shared-bill-splitter.avif", "/payclear-spending-limits-savings.avif"].map((src, index) => (
               <div
                 className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[1.8rem] border border-[#d9e7f6] bg-white shadow-[0_24px_70px_rgba(7,20,63,0.14)] sm:max-w-none"
                 key={src}
@@ -490,7 +490,7 @@ export default function Home() {
           </div>
           <div className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[1.8rem] border border-white/14 bg-white/8 shadow-[0_28px_80px_rgba(0,0,0,0.28)] md:ml-auto md:max-w-[380px]">
             <Image
-              src="/GPS - 7.jpg"
+              src="/payclear-privacy-local-tracker.avif"
               alt="PayClear privacy promise screen"
               fill
               sizes="(min-width: 768px) 380px, 320px"

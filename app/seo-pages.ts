@@ -47,4 +47,28 @@ export const seoLandingPages = [
     title: "Subscription tracker for Android",
     text: "Track subscriptions on Android with PayClear's private, local-first app.",
   },
+  {
+    href: "/track-streaming-subscriptions",
+    label: "Streaming tracker",
+    title: "Track streaming subscriptions",
+    text: "Keep streaming renewals, trials and shared plans visible before they charge again.",
+  },
+  {
+    href: "/shared-subscription-bill-splitter",
+    label: "Bill splitter",
+    title: "Shared subscription bill splitter",
+    text: "Split recurring subscriptions and shared plans without a spreadsheet.",
+  },
+  {
+    href: "/subscription-cancellation-savings",
+    label: "Savings calculator",
+    title: "Subscription cancellation savings",
+    text: "Estimate how much cancelling unused subscriptions could save over time.",
+  },
+  {
+    href: "/recurring-payment-tracker",
+    label: "Recurring tracker",
+    title: "Recurring payment tracker",
+    text: "Track repeating payments, subscriptions and renewals in a private app.",
+  },
 ];

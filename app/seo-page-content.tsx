@@ -75,7 +75,7 @@ export function SeoPageContent({
         <nav className="mx-auto flex min-h-[78px] max-w-5xl items-center justify-between gap-3 px-4 py-2 sm:min-h-[102px] sm:px-5 sm:py-4">
           <Link className="relative block h-[62px] w-[229px] max-w-[68vw] shrink overflow-hidden sm:h-[86px] sm:w-[317px] sm:max-w-[62vw]" href="/" aria-label="PayClear home">
             <Image
-              src="/payclear_icon_text.png"
+              src="/payclear-logo-text-header.png"
               alt="PayClear"
               fill
               priority
