@@ -47,6 +47,8 @@ export default function FreeTrialReminderPage() {
       eyebrow="Free trial reminder"
       title="Stay ahead of free trials before they turn into paid subscriptions."
       intro="PayClear helps you track free trial end dates, first paid charges and renewal reminders without linking your bank or creating an account."
+      path="/free-trial-reminder"
+      breadcrumb="Free trial reminder"
       sections={sections}
       cta="Review free trials before the first charge."
     />

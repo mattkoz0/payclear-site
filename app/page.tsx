@@ -174,6 +174,18 @@ const structuredData = {
         },
       })),
     },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.pay-clear.com/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.pay-clear.com/",
+        },
+      ],
+    },
   ],
 };
 

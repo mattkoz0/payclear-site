@@ -47,6 +47,8 @@ export default function NoBankSubscriptionTrackerPage() {
       eyebrow="No-bank subscription tracker"
       title="A subscription tracker with no bank connection."
       intro="PayClear helps you track subscriptions, trials and recurring bills without bank linking, card linking or account creation."
+      path="/no-bank-subscription-tracker"
+      breadcrumb="No-bank subscription tracker"
       sections={sections}
       cta="Keep subscription tracking under your control."
     />

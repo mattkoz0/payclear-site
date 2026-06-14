@@ -5,6 +5,8 @@ type SeoPageProps = {
   eyebrow: string;
   title: string;
   intro: string;
+  path: string;
+  breadcrumb: string;
   sections: Array<{
     title: string;
     body: string[];
@@ -19,9 +21,41 @@ const relatedPages = [
   { href: "/no-bank-subscription-tracker", label: "No-bank tracker" },
 ];
 
-export function SeoPageContent({ eyebrow, title, intro, sections, cta }: SeoPageProps) {
+export function SeoPageContent({
+  eyebrow,
+  title,
+  intro,
+  path,
+  breadcrumb,
+  sections,
+  cta,
+}: SeoPageProps) {
+  const pageUrl = `https://www.pay-clear.com${path}`;
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.pay-clear.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: breadcrumb,
+        item: pageUrl,
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-[#f7fbff] text-[#07143f]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <header className="border-b border-[#d9e7f6] bg-white">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
           <Link className="relative block h-12 w-44 overflow-hidden" href="/" aria-label="PayClear home">
@@ -41,6 +75,14 @@ export function SeoPageContent({ eyebrow, title, intro, sections, cta }: SeoPage
       </header>
 
       <article className="mx-auto max-w-5xl px-5 py-14 md:py-20">
+        <nav aria-label="Breadcrumb" className="mb-8 flex flex-wrap items-center gap-2 text-sm font-bold">
+          <Link className="text-[#2b7cff]" href="/">
+            Home
+          </Link>
+          <span className="text-[#8aa0bf]">/</span>
+          <span className="text-[#53627a]">{breadcrumb}</span>
+        </nav>
+
         <div className="grid gap-10 md:grid-cols-[1fr_0.42fr] md:items-start">
           <div>
             <p className="text-sm font-bold uppercase text-[#7b4dff]">{eyebrow}</p>

@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   },
   description:
     "Track subscriptions, trials and recurring payments privately without linking your bank or creating an account.",
+  keywords: [
+    "subscription tracker",
+    "private subscription tracker",
+    "bill reminder",
+    "free trial reminder",
+    "recurring payment tracker",
+    "subscription manager",
+    "no bank subscription tracker",
+  ],
   alternates: {
     canonical: "/",
   },

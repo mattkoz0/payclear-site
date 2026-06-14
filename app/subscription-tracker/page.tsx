@@ -47,6 +47,8 @@ export default function SubscriptionTrackerPage() {
       eyebrow="Subscription tracker"
       title="Track subscriptions without linking your bank."
       intro="PayClear is a private subscription tracker for recurring payments, renewals and free trials. Add services manually, see what renews next and understand what your subscriptions really cost."
+      path="/subscription-tracker"
+      breadcrumb="Subscription tracker"
       sections={sections}
       cta="Start tracking subscriptions privately."
     />

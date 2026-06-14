@@ -47,6 +47,8 @@ export default function BillReminderPage() {
       eyebrow="Bill reminder"
       title="A private bill reminder for recurring payments."
       intro="PayClear helps you remember subscriptions, renewals and repeating bills manually, without bank linking or account creation."
+      path="/bill-reminder"
+      breadcrumb="Bill reminder"
       sections={sections}
       cta="Track recurring bills before they renew."
     />
