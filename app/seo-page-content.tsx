@@ -13,6 +13,10 @@ type SeoPageProps = {
     body: string[];
   }>;
   cta: string;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
 };
 
 export function SeoPageContent({
@@ -23,8 +27,26 @@ export function SeoPageContent({
   breadcrumb,
   sections,
   cta,
+  faqs,
 }: SeoPageProps) {
   const pageUrl = `https://www.pay-clear.com${path}`;
+  const pageFaqs = faqs ?? [
+    {
+      question: `Can I use PayClear as a ${breadcrumb.toLowerCase()} without linking my bank?`,
+      answer:
+        "Yes. PayClear is designed for manual subscription and recurring payment tracking. It does not connect to your bank, scan transactions or ask for bank credentials.",
+    },
+    {
+      question: "Does PayClear require an account?",
+      answer:
+        "No. The core tracking experience does not require a PayClear account. You can add subscriptions, trials and recurring bills manually.",
+    },
+    {
+      question: "Is PayClear available on Android and iPhone?",
+      answer:
+        "PayClear is available on Google Play for Android. The Apple App Store version is planned, but it is not available yet.",
+    },
+  ];
   const pageData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -61,6 +83,18 @@ export function SeoPageContent({
             item: pageUrl,
           },
         ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: pageFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
       },
     ],
   };
@@ -134,6 +168,20 @@ export function SeoPageContent({
             </section>
           ))}
         </div>
+
+        <section className="mt-8 rounded-2xl border border-[#d9e7f6] bg-white p-6 md:p-8">
+          <h2 className="text-2xl font-black tracking-tight md:text-3xl">
+            Frequently asked questions
+          </h2>
+          <div className="mt-5 grid gap-4">
+            {pageFaqs.map((faq) => (
+              <article className="rounded-2xl border border-[#d9e7f6] bg-[#fbfdff] p-5" key={faq.question}>
+                <h3 className="text-lg font-black">{faq.question}</h3>
+                <p className="mt-3 leading-7 text-[#53627a]">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-8 rounded-2xl bg-[#07143f] p-6 text-white md:p-9">
           <h2 className="text-2xl font-black md:text-3xl">{cta}</h2>
