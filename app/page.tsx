@@ -230,6 +230,7 @@ function Header() {
           <a href="#privacy">Privacy</a>
           <a href="#screens">Screens</a>
           <Link href="/about">About</Link>
+          <Link href="/app">App</Link>
           <Link href="/support">Support</Link>
         </div>
         <Link
@@ -253,6 +254,9 @@ function Footer() {
           <Link href="/free-trial-reminder">Free Trial Reminder</Link>
           <Link href="/subscription-tracker-android">Android App</Link>
           <Link href="/about">About PayClear</Link>
+          <Link href="/app">App</Link>
+          <Link href="/press">Press</Link>
+          <Link href="/changelog">Changelog</Link>
           <Link href="/privacy">Privacy Policy</Link>
           <Link href="/terms">Terms of Use</Link>
           <Link href="/support">Support</Link>

@@ -71,4 +71,22 @@ export const seoLandingPages = [
     title: "Recurring payment tracker",
     text: "Track repeating payments, subscriptions and renewals in a private app.",
   },
+  {
+    href: "/subscription-tracker-without-plaid",
+    label: "Without Plaid",
+    title: "Subscription tracker without Plaid",
+    text: "Track recurring payments manually without Plaid, bank sync or transaction scanning.",
+  },
+  {
+    href: "/payclear-vs-bank-connected-trackers",
+    label: "Tracker comparison",
+    title: "PayClear vs bank-connected trackers",
+    text: "Compare PayClear's manual privacy-first model with automatic bank-connected apps.",
+  },
+  {
+    href: "/best-private-subscription-tracker",
+    label: "Private tracker",
+    title: "Best private subscription tracker",
+    text: "Learn what makes a subscription tracker private and where PayClear fits.",
+  },
 ];
