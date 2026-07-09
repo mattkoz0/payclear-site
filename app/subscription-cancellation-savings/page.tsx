@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Estimate subscription cancellation savings and understand recurring costs with PayClear.",
   alternates: {
     canonical: "/subscription-cancellation-savings",
+    languages: { "en-US": "/subscription-cancellation-savings", "en-CA": "/subscription-cancellation-savings", "x-default": "/subscription-cancellation-savings" },
   },
 };
 

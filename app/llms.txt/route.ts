@@ -13,6 +13,7 @@ Key pages:
 - https://www.pay-clear.com/about
 - https://www.pay-clear.com/press
 - https://www.pay-clear.com/changelog
+- https://www.pay-clear.com/blog
 - https://www.pay-clear.com/subscription-tracker
 - https://www.pay-clear.com/free-trial-reminder
 - https://www.pay-clear.com/bill-reminder
@@ -33,6 +34,23 @@ Key pages:
 - https://www.pay-clear.com/payclear-vs-rocket-money
 - https://www.pay-clear.com/payclear-vs-truebill
 - https://www.pay-clear.com/payclear-vs-mint
+- https://www.pay-clear.com/stop-wasting-money-subscriptions
+- https://www.pay-clear.com/subscription-cost-calculator
+- https://www.pay-clear.com/family-subscription-manager
+- https://www.pay-clear.com/subscription-tracker-no-login
+- https://www.pay-clear.com/subscription-tracker-usa
+
+Blog guides:
+- https://www.pay-clear.com/blog/how-to-track-all-subscriptions
+- https://www.pay-clear.com/blog/subscriptions-americans-forget-about
+- https://www.pay-clear.com/blog/free-trial-tracker-never-get-charged
+- https://www.pay-clear.com/blog/manual-vs-automatic-subscription-tracking
+- https://www.pay-clear.com/blog/americans-subscription-spending-2026
+- https://www.pay-clear.com/blog/best-subscription-tracker-apps-android-2026
+- https://www.pay-clear.com/blog/how-to-cancel-unused-subscriptions
+- https://www.pay-clear.com/blog/streaming-subscription-costs-2026
+- https://www.pay-clear.com/blog/canadian-subscription-costs-track-save
+- https://www.pay-clear.com/blog/subscription-fatigue-north-america
 
 Product notes:
 - Manual subscription tracking

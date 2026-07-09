@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "./blog/posts";
 import { seoLandingPages } from "./seo-pages";
 
 const baseUrl = "https://www.pay-clear.com";
@@ -22,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/pricing`,
       lastModified,
       changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
@@ -71,6 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: index === 0 ? 0.9 : 0.85,
+    })),
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(`${post.dateModified}T00:00:00.000Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     })),
   ];
 }

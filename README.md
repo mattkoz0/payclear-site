@@ -20,6 +20,13 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Production configuration
+
+Set these Vercel environment variables before deploying production changes:
+
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — GA4 measurement ID (for example, `G-XXXXXXXXXX`). When unset, no Google Analytics script is loaded.
+- `ANDROID_APP_SHA256_CERT_FINGERPRINT` — SHA-256 fingerprint from the production app-signing certificate. This enables `/.well-known/assetlinks.json` for Android App Links. Use the Google Play App Signing certificate fingerprint, not a placeholder or debug certificate.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Use PayClear as a private subscription tracker for renewals, free trials, recurring bills and monthly subscription costs without linking your bank.",
   alternates: {
     canonical: "/subscription-tracker",
+    languages: { "en-US": "/subscription-tracker", "en-CA": "/subscription-tracker", "x-default": "/subscription-tracker" },
   },
 };
 

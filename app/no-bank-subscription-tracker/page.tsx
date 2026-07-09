@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "PayClear is a no-bank subscription tracker for people who want to track renewals, trials and recurring bills without sharing bank access.",
   alternates: {
     canonical: "/no-bank-subscription-tracker",
+    languages: { "en-US": "/no-bank-subscription-tracker", "en-CA": "/no-bank-subscription-tracker", "x-default": "/no-bank-subscription-tracker" },
   },
 };
 

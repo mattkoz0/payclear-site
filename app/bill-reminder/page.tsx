@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "PayClear is a private bill reminder for subscriptions, recurring payments, renewals and shared bills without bank linking.",
   alternates: {
     canonical: "/bill-reminder",
+    languages: { "en-US": "/bill-reminder", "en-CA": "/bill-reminder", "x-default": "/bill-reminder" },
   },
 };
 

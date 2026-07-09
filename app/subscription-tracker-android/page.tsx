@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Download PayClear on Google Play and track subscriptions, free trials and recurring bills privately on Android.",
   alternates: {
     canonical: "/subscription-tracker-android",
+    languages: { "en-US": "/subscription-tracker-android", "en-CA": "/subscription-tracker-android", "x-default": "/subscription-tracker-android" },
   },
 };
 

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Use PayClear as a manual subscription tracker for renewals, trials and recurring bills without automatic bank scanning.",
   alternates: {
     canonical: "/manual-subscription-tracker",
+    languages: { "en-US": "/manual-subscription-tracker", "en-CA": "/manual-subscription-tracker", "x-default": "/manual-subscription-tracker" },
   },
 };
 

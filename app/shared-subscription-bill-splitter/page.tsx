@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Split shared subscription bills, recurring plans and family memberships with PayClear.",
   alternates: {
     canonical: "/shared-subscription-bill-splitter",
+    languages: { "en-US": "/shared-subscription-bill-splitter", "en-CA": "/shared-subscription-bill-splitter", "x-default": "/shared-subscription-bill-splitter" },
   },
 };
 

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "PayClear is a subscription reminder app for renewals, free trials and recurring bills without bank linking or account creation.",
   alternates: {
     canonical: "/subscription-reminder-app",
+    languages: { "en-US": "/subscription-reminder-app", "en-CA": "/subscription-reminder-app", "x-default": "/subscription-reminder-app" },
   },
 };
 

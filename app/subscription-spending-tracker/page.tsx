@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Track recurring subscription spending, monthly costs, limits and cancellation savings with PayClear.",
   alternates: {
     canonical: "/subscription-spending-tracker",
+    languages: { "en-US": "/subscription-spending-tracker", "en-CA": "/subscription-spending-tracker", "x-default": "/subscription-spending-tracker" },
   },
 };
 

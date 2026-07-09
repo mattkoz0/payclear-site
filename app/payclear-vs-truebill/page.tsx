@@ -19,21 +19,21 @@ const sections = [
   {
     title: "Truebill became Rocket Money — but the model stayed the same",
     body: [
-      "Truebill was rebranded to Rocket Money after being acquired by Rocket Companies. The core product remains the same: a bank-connected finance app that scans your transactions through Plaid to find and manage subscriptions. It can negotiate bills and cancel services on your behalf.",
+      "Truebill was rebranded to Rocket Money after Rocket Companies acquired it. Rocket Money is a linked-account personal-finance app that can analyze transactions for recurring charges and offers optional cancellation or bill-negotiation services. Check Rocket Money directly for current availability, pricing, and features.",
       "PayClear offers a fundamentally different approach. It is a manual subscription tracker that does not connect to your bank, does not require Plaid and does not scan your transactions. You choose which subscriptions to track, keeping complete privacy over your financial data.",
     ],
   },
   {
     title: "Privacy differences",
     body: [
-      "Truebill (Rocket Money) requires you to connect your bank accounts through Plaid. This means sharing your bank login credentials with a third-party service that accesses your full transaction history. While Plaid is widely used, it creates a data access point that privacy-conscious users may want to avoid.",
+      "Rocket Money's automatic tracking uses linked financial-account data through Plaid. While that model can be convenient, it is a data-sharing choice that privacy-conscious users may prefer to avoid. PayClear uses a manual model, so it does not need a bank connection or transaction feed for core tracking.",
       "PayClear stores subscription data locally on your device. There is no Plaid connection, no transaction scanning and no server-side storage of your financial information. If you uninstall the app, your data is gone — because it was never uploaded anywhere.",
     ],
   },
   {
     title: "Cost comparison",
     body: [
-      "Truebill (Rocket Money) uses a \"name your price\" model for premium features: $4-12 per month. Over a year, that is $48-144 for subscription tracking. The irony of paying a monthly subscription to track your subscriptions is not lost on many users.",
+      "Rocket Money offers free and optional paid services, and its premium pricing and feature availability can change. Check its current plan details directly before signing up. PayClear keeps its own pricing simple: a free tier for up to 5 active services and a one-time Lifetime purchase for premium features.",
       "PayClear offers a free tier with up to 5 active services. Premium features — unlimited services, no ads, app lock, savings simulator and premium reports — are a one-time Lifetime purchase. You pay once and own the upgrade permanently.",
     ],
   },
@@ -46,6 +46,18 @@ const sections = [
   },
 ];
 
+const comparison = {
+  caption: "PayClear and Truebill (now Rocket Money) at a glance",
+  headers: ["Feature", "PayClear", "Truebill / Rocket Money"] as [string, string, string],
+  rows: [
+    ["Tracking model", "Manual subscription entries", "Linked-account personal-finance app"],
+    ["Bank or Plaid connection", "Not required", "Used for linked-account features"],
+    ["Transaction scanning", "No", "Used to find recurring charges"],
+    ["Data focus", "Subscriptions you enter", "Broader personal-finance information"],
+    ["Premium model", "One-time Lifetime purchase", "Free and optional paid services"],
+  ] as Array<[string, string, string]>,
+};
+
 export default function PayclearVsTruebillPage() {
   return (
     <SeoPageContent
@@ -55,6 +67,7 @@ export default function PayclearVsTruebillPage() {
       path="/payclear-vs-truebill"
       breadcrumb="PayClear vs Truebill"
       sections={sections}
+      comparison={comparison}
       cta="Try PayClear — subscription tracking without bank access."
     />
   );

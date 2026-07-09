@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { GooglePlayBadge } from "../components/google-play-badge";
 
 export const metadata: Metadata = {
   title: "Download PayClear — Free Subscription Tracker for Android",
@@ -82,14 +83,7 @@ export default function DownloadPage() {
         of what you pay and when it renews.
       </p>
 
-      <a
-        className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[#2b7cff] px-8 py-4 text-lg font-black text-white shadow-[0_18px_50px_rgba(43,120,255,0.35)] transition hover:bg-[#3d8aff]"
-        href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=download"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Get it on Google Play
-      </a>
+      <GooglePlayBadge campaign="download" className="mt-8" />
 
       <p className="mt-3 text-sm font-semibold text-[#8aa0bf]">
         App Store coming soon

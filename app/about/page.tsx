@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GooglePlayBadge } from "../components/google-play-badge";
 
 export const metadata: Metadata = {
   title: "About PayClear",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Learn what PayClear is, who it is for and how its private manual subscription tracking model works.",
   alternates: {
     canonical: "/about",
+    languages: { "en-US": "/about", "en-CA": "/about", "x-default": "/about" },
   },
   openGraph: {
     title: "About PayClear",
@@ -107,14 +109,7 @@ export default function AboutPage() {
           <p className="mt-4 max-w-3xl leading-8 text-[#dce8ff]">
             PayClear is available for Android. The App Store version is coming soon.
           </p>
-          <a
-            className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-[#2b7cff] px-6 py-3 text-sm font-bold text-white"
-            href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=about"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Get it on Google Play
-          </a>
+          <GooglePlayBadge campaign="about" className="mt-6" />
         </section>
       </article>
     </main>

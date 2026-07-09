@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GooglePlayBadge } from "../components/google-play-badge";
 
 export const metadata: Metadata = {
   title: "PayClear App",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Download PayClear for Android and track subscriptions, free trials and recurring payments privately.",
   alternates: {
     canonical: "/app",
+    languages: { "en-US": "/app", "en-CA": "/app", "x-default": "/app" },
   },
   openGraph: {
     title: "PayClear App",
@@ -70,14 +72,7 @@ export default function AppPage() {
               and recurring payments privately. It uses manual tracking instead
               of bank linking or transaction scanning.
             </p>
-            <a
-              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#07143f] px-6 py-3 text-sm font-bold text-white"
-              href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Get it on Google Play
-            </a>
+            <GooglePlayBadge campaign="app" className="mt-8" />
           </div>
           <div className="relative mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-[2rem] border border-[#d9e7f6] bg-white shadow-[0_18px_55px_rgba(7,20,63,0.1)]">
             <Image

@@ -4,6 +4,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Support",
   description: "Contact PayClear support for help with the app.",
+  alternates: {
+    canonical: "/support",
+    languages: { "en-US": "/support", "en-CA": "/support", "x-default": "/support" },
+  },
   openGraph: {
     title: "Support | PayClear",
     description: "Need help with PayClear? Contact support@pay-clear.com.",

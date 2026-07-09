@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Track streaming subscriptions, free trials, shared plans and renewal dates privately with PayClear.",
   alternates: {
     canonical: "/track-streaming-subscriptions",
+    languages: { "en-US": "/track-streaming-subscriptions", "en-CA": "/track-streaming-subscriptions", "x-default": "/track-streaming-subscriptions" },
   },
 };
 

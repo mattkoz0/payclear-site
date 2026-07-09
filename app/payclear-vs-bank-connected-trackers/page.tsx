@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Compare PayClear's manual private subscription tracking model with bank-connected recurring payment trackers.",
   alternates: {
     canonical: "/payclear-vs-bank-connected-trackers",
+    languages: { "en-US": "/payclear-vs-bank-connected-trackers", "en-CA": "/payclear-vs-bank-connected-trackers", "x-default": "/payclear-vs-bank-connected-trackers" },
   },
 };
 

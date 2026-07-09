@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Track recurring payments, subscriptions, renewals and free trials privately with PayClear.",
   alternates: {
     canonical: "/recurring-payment-tracker",
+    languages: { "en-US": "/recurring-payment-tracker", "en-CA": "/recurring-payment-tracker", "x-default": "/recurring-payment-tracker" },
   },
 };
 

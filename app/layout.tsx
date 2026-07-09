@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "./components/google-analytics";
+import { ResourceHints } from "./components/resource-hints";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,6 +14,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pay-clear.com"),
@@ -92,7 +96,19 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="PayClear Blog"
+          href="/feed.xml"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
+        <ResourceHints />
+        {gaMeasurementId ? (
+          <GoogleAnalytics measurementId={gaMeasurementId} />
+        ) : null}
         {children}
         <Analytics />
       </body>

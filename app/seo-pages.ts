@@ -132,6 +132,36 @@ export const seoLandingPages = [
     title: "Manage recurring payments",
     text: "Track bills, subscriptions and regular charges in one private dashboard.",
   },
+  {
+    href: "/stop-wasting-money-subscriptions",
+    label: "Stop wasting money",
+    title: "Stop wasting money on subscriptions",
+    text: "Find unused subscriptions, review renewals, and make recurring spending intentional.",
+  },
+  {
+    href: "/subscription-cost-calculator",
+    label: "Cost calculator",
+    title: "Subscription cost calculator",
+    text: "Calculate monthly and yearly subscription costs, then plan practical savings.",
+  },
+  {
+    href: "/family-subscription-manager",
+    label: "Family plans",
+    title: "Family subscription manager",
+    text: "Organize shared plans, bill splits, and household renewal decisions.",
+  },
+  {
+    href: "/subscription-tracker-no-login",
+    label: "No login tracker",
+    title: "Subscription tracker with no login",
+    text: "Track renewals privately without a PayClear account or bank connection.",
+  },
+  {
+    href: "/subscription-tracker-usa",
+    label: "USA tracker",
+    title: "Subscription tracker USA",
+    text: "Track US subscriptions, free trials, and bills without a US bank connection.",
+  },
   // Competitor comparison pages
   {
     href: "/payclear-vs-rocket-money",

@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "PayClear Privacy Policy explaining how information is collected, used and protected.",
+  alternates: {
+    canonical: "/privacy",
+    languages: { "en-US": "/privacy", "en-CA": "/privacy", "x-default": "/privacy" },
+  },
   openGraph: {
     title: "Privacy Policy | PayClear",
     description:

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "PayClear product facts, positioning and contact details for press, directories and AI citation sources.",
   alternates: {
     canonical: "/press",
+    languages: { "en-US": "/press", "en-CA": "/press", "x-default": "/press" },
   },
 };
 

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "PayClear is a subscription tracker without Plaid, bank sync or transaction scanning.",
   alternates: {
     canonical: "/subscription-tracker-without-plaid",
+    languages: { "en-US": "/subscription-tracker-without-plaid", "en-CA": "/subscription-tracker-without-plaid", "x-default": "/subscription-tracker-without-plaid" },
   },
 };
 

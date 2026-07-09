@@ -6,6 +6,26 @@
 
 > **Kontekst techniczny**: Next.js 16.2.6, React 19, TailwindCSS 4, hosting Vercel, domena `pay-clear.com`
 
+## Status wdrożenia — 9 lipca 2026
+
+### Wdrożone w kodzie
+
+- Oficjalny badge Google Play, responsywne CTA, spójne UTM-y i zdarzenie `click_google_play`.
+- Mobilny sticky CTA po wyjściu z hero oraz preconnect do Google Play.
+- Metadata strony głównej, 13 pytań FAQ ze schemą, canonicale i `hreflang` dla `en-US`, `en-CA` oraz `x-default`.
+- Wszystkie brakujące landing pages z tabeli long-tail: waste reduction, calculator, family manager, no-login i USA.
+- Blog z 10 poradnikami, Article schema, statycznym generowaniem, wewnętrznym linkowaniem, sitemapą, RSS i dynamicznymi obrazami OG dla artykułów.
+- Tabele porównawcze i ostrożniejsze, zaktualizowane copy dla Rocket Money/Truebill/Mint.
+- Konfigurowalny GA4 (`NEXT_PUBLIC_GA_MEASUREMENT_ID`) i endpoint Digital Asset Links, który aktywuje się po podaniu prawidłowego fingerprintu produkcyjnego.
+
+### Wymaga działania poza repozytorium lub danych właściciela aplikacji
+
+- Utworzenie property GA4, wpisanie `NEXT_PUBLIC_GA_MEASUREMENT_ID` na Vercel i połączenie GA4 z Google Search Console.
+- Wpisanie `ANDROID_APP_SHA256_CERT_FINGERPRINT` na Vercel — SHA-256 musi pochodzić z certyfikatu Google Play App Signing, nie z debug APK.
+- Konfiguracja Android App Links również po stronie manifestu aplikacji oraz jej publikacja.
+- GSC, Google Play Console, Product Hunt, katalogi, outreach, testy PageSpeed/Rich Results i realne opinie Google Play.
+- Rating/testimonials dopiero po zebraniu prawdziwych, weryfikowalnych danych; nie dodawać wymyślonych ocen ani liczby pobrań.
+
 ---
 
 ## 📊 ANALIZA OBECNEGO STANU (dane GSC — ostatnie 3 miesiące)

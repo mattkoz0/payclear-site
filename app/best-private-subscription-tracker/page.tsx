@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Learn what to look for in a private subscription tracker and how PayClear helps track renewals without bank linking.",
   alternates: {
     canonical: "/best-private-subscription-tracker",
+    languages: { "en-US": "/best-private-subscription-tracker", "en-CA": "/best-private-subscription-tracker", "x-default": "/best-private-subscription-tracker" },
   },
 };
 

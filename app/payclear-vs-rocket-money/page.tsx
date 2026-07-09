@@ -20,21 +20,21 @@ const sections = [
   {
     title: "Rocket Money vs PayClear: two different approaches",
     body: [
-      "Rocket Money (formerly Truebill) is an automatic subscription tracker that connects to your bank account through Plaid. It scans your transactions, identifies recurring charges and can negotiate bills or cancel services on your behalf. It is one of the most popular finance apps in the US.",
+      "Rocket Money (formerly Truebill) is a personal-finance app that can link financial accounts through Plaid, analyze linked transactions for recurring charges, and offer subscription-cancellation and bill-negotiation services. Its available features and plan details can change, so check Rocket Money directly before choosing a plan.",
       "PayClear takes the opposite approach. It is a manual subscription tracker that does not connect to your bank, does not scan transactions and does not require an account. You add only the subscriptions you want to track, keeping full control over your financial data.",
     ],
   },
   {
     title: "Why choose PayClear over Rocket Money?",
     body: [
-      "Privacy is the biggest reason. Rocket Money requires Plaid access to your bank accounts, which means sharing your bank login credentials with a third party. Your entire transaction history becomes accessible. PayClear never asks for bank access — your subscription data stays on your device.",
-      "Cost is another factor. Rocket Money offers a free tier but charges $4-12 per month (you choose your price) for premium features like bill negotiation and cancellation. PayClear is free for up to 5 services, and premium features are a one-time Lifetime purchase — not another monthly subscription.",
+      "Privacy is a key difference. Rocket Money's automatic tracking works from linked financial-account data. PayClear never asks for bank access, Plaid, or transaction scanning: you add only the subscriptions you choose to track, and the tracker is designed around local device data.",
+      "Cost is another consideration. Rocket Money offers free and optional paid services, with pricing and included features that can vary. PayClear is free for up to 5 services, and its premium features are offered as a one-time Lifetime purchase rather than another monthly subscription.",
     ],
   },
   {
     title: "Feature comparison",
     body: [
-      "Rocket Money: automatic transaction scanning, bill negotiation, subscription cancellation, budget tracking, credit score monitoring, savings accounts. Requires bank connection and Plaid. Premium costs $4-12/month.",
+      "Rocket Money: linked-account transaction analysis, budgeting, recurring-charge monitoring, and optional cancellation or bill-negotiation services. Its exact plan features and pricing should be checked directly with Rocket Money.",
       "PayClear: manual subscription tracking, free trial reminders, spending limits, shared bill splitting, cancellation savings simulator, multi-currency support, CSV export, local backups. No bank connection needed. Premium is a one-time purchase. PayClear focuses specifically on subscriptions rather than being a full budgeting tool.",
     ],
   },
@@ -65,6 +65,18 @@ const faqs = [
   },
 ];
 
+const comparison = {
+  caption: "PayClear and Rocket Money at a glance",
+  headers: ["Feature", "PayClear", "Rocket Money"] as [string, string, string],
+  rows: [
+    ["Subscription detection", "Manual entries you choose", "Linked-account transaction analysis"],
+    ["Bank or Plaid connection", "Not required", "Used for linked-account features"],
+    ["Renewal reminders", "Local reminders", "Available features vary by plan"],
+    ["Cancellation help", "You cancel with the provider", "Optional cancellation services"],
+    ["Premium model", "One-time Lifetime purchase", "Free and optional paid services"],
+  ] as Array<[string, string, string]>,
+};
+
 export default function PayclearVsRocketMoneyPage() {
   return (
     <SeoPageContent
@@ -74,6 +86,7 @@ export default function PayclearVsRocketMoneyPage() {
       path="/payclear-vs-rocket-money"
       breadcrumb="PayClear vs Rocket Money"
       sections={sections}
+      comparison={comparison}
       cta="Try PayClear — private subscription tracking without bank access."
       faqs={faqs}
     />

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Track free trial end dates with PayClear and get local reminders before a trial turns into a paid subscription.",
   alternates: {
     canonical: "/free-trial-reminder",
+    languages: { "en-US": "/free-trial-reminder", "en-CA": "/free-trial-reminder", "x-default": "/free-trial-reminder" },
   },
 };
 

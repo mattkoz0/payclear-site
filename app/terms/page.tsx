@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Terms of Use",
   description:
     "PayClear Terms of Use for the personal recurring payment organization app.",
+  alternates: {
+    canonical: "/terms",
+    languages: { "en-US": "/terms", "en-CA": "/terms", "x-default": "/terms" },
+  },
   openGraph: {
     title: "Terms of Use | PayClear",
     description: "Simple terms for using PayClear.",

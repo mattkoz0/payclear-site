@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { GooglePlayBadge } from "../components/google-play-badge";
 
 export const metadata: Metadata = {
   title: "PayClear Pricing — Free Plan & One-Time Lifetime Unlock",
@@ -131,14 +131,7 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
-            <a
-              className="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#d9e7f6] bg-[#fbfdff] px-6 py-3 text-sm font-bold text-[#07143f] transition hover:border-[#2b7cff]"
-              href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=pricing_free"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Download Free
-            </a>
+            <GooglePlayBadge campaign="pricing_free" className="mt-8 w-full" />
           </div>
 
           <div className="rounded-2xl border border-[#a78bfa] bg-[#07143f] p-7 text-white shadow-[0_18px_50px_rgba(7,20,63,0.18)]">
@@ -163,14 +156,7 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
-            <a
-              className="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#2b7cff] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#3d8aff]"
-              href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=pricing_lifetime"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Get Lifetime on Google Play
-            </a>
+            <GooglePlayBadge campaign="pricing_lifetime" className="mt-8 w-full" />
           </div>
         </div>
 

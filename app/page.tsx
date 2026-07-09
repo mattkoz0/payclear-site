@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GooglePlayBadge } from "./components/google-play-badge";
+import { MobileStickyPlayCta } from "./components/mobile-sticky-play-cta";
 import { seoLandingPages } from "./seo-pages";
 
 export const metadata: Metadata = {
@@ -233,6 +235,18 @@ const structuredData = {
       },
     },
     {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.pay-clear.com/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.pay-clear.com/",
+        },
+      ],
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://www.pay-clear.com/#faq",
       mainEntity: faqs.map((faq) => ({
@@ -250,16 +264,10 @@ const structuredData = {
 function StoreButtons({ compact = false }: { compact?: boolean }) {
   return (
     <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-      <a
-        className={`inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#07143f] text-center font-bold text-white shadow-[0_18px_40px_rgba(7,20,63,0.2)] transition hover:bg-[#10245f] sm:w-auto ${
-          compact ? "px-5 py-3 text-sm" : "px-6 py-3 text-sm"
-        }`}
-        href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=homepage"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Get it on Google Play
-      </a>
+      <GooglePlayBadge
+        campaign={compact ? "homepage_footer" : "homepage"}
+        className="w-full sm:w-auto"
+      />
       <span
         className={`inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#bcd0ef] bg-white/80 text-center font-bold text-[#415574] sm:w-auto ${
           compact ? "px-5 py-3 text-sm" : "px-6 py-3 text-sm"
@@ -292,6 +300,7 @@ function Header() {
           <a href="#screens">Screens</a>
           <Link href="/about">About</Link>
           <Link href="/pricing">Pricing</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/app">App</Link>
           <Link href="/support">Support</Link>
         </div>
@@ -318,6 +327,7 @@ function Footer() {
           <Link href="/best-subscription-tracker-app">Best Tracker App</Link>
           <Link href="/cancel-unused-subscriptions">Cancel Subscriptions</Link>
           <Link href="/download">Download</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/pricing">Pricing</Link>
           <Link href="/about">About PayClear</Link>
           <Link href="/app">App</Link>
@@ -334,7 +344,7 @@ function Footer() {
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f7fbff] text-[#07143f]">
+    <main className="min-h-screen overflow-x-hidden bg-[#f7fbff] pb-24 text-[#07143f] sm:pb-0">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -735,6 +745,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <MobileStickyPlayCta />
     </main>
   );
 }

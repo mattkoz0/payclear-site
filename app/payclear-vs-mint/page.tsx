@@ -26,8 +26,8 @@ const sections = [
   {
     title: "What Mint did for subscriptions",
     body: [
-      "Mint automatically detected recurring charges by scanning your bank and credit card transactions. It showed subscription costs, due dates and could alert you about price increases. This was convenient but required full bank access through data aggregation.",
-      "The downside was that Mint had access to your entire financial life. Your spending patterns, income, debts and every transaction were processed by Intuit. When Mint shut down, users realized how much financial data they had entrusted to a single service.",
+      "Mint automatically detected recurring charges by scanning linked bank and credit-card transactions. This could be convenient, but it relied on financial-account data aggregation. Former Mint users now need to choose whether their replacement should use a similar connected model or a manual approach.",
+      "A connected financial app necessarily handles more data than a focused manual tracker, because it needs transaction information to identify recurring charges. For people who prefer to keep a smaller record, the shutdown is an opportunity to choose a tool that tracks only the subscriptions they enter.",
     ],
   },
   {
@@ -64,6 +64,18 @@ const faqs = [
   },
 ];
 
+const comparison = {
+  caption: "PayClear for former Mint users",
+  headers: ["Feature", "PayClear", "Mint (discontinued)"] as [string, string, string],
+  rows: [
+    ["Availability", "Android on Google Play", "Service discontinued"],
+    ["Subscription model", "Manual entries", "Connected-account transaction analysis"],
+    ["Bank connection", "Not required", "Required for connected financial views"],
+    ["Primary focus", "Subscriptions, trials, and recurring bills", "Broad personal-finance management"],
+    ["Data approach", "Local-first subscription record", "Historical connected financial app"],
+  ] as Array<[string, string, string]>,
+};
+
 export default function PayclearVsMintPage() {
   return (
     <SeoPageContent
@@ -73,6 +85,7 @@ export default function PayclearVsMintPage() {
       path="/payclear-vs-mint"
       breadcrumb="PayClear vs Mint"
       sections={sections}
+      comparison={comparison}
       cta="Try PayClear — subscription tracking without the Mint trade-offs."
       faqs={faqs}
     />

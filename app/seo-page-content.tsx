@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GooglePlayBadge } from "./components/google-play-badge";
 import { seoLandingPages } from "./seo-pages";
 
 type SeoPageProps = {
@@ -13,6 +14,11 @@ type SeoPageProps = {
     body: string[];
   }>;
   cta: string;
+  comparison?: {
+    caption: string;
+    headers: [string, string, string];
+    rows: Array<[string, string, string]>;
+  };
   faqs?: Array<{
     question: string;
     answer: string;
@@ -27,6 +33,7 @@ export function SeoPageContent({
   breadcrumb,
   sections,
   cta,
+  comparison,
   faqs,
 }: SeoPageProps) {
   const pageUrl = `https://www.pay-clear.com${path}`;
@@ -117,9 +124,10 @@ export function SeoPageContent({
               className="object-contain"
             />
           </Link>
-          <Link className="shrink-0 text-sm font-bold text-[#2b7cff]" href="/">
-            Home
-          </Link>
+          <div className="flex shrink-0 items-center gap-4 text-sm font-bold text-[#2b7cff]">
+            <Link href="/blog">Blog</Link>
+            <Link href="/">Home</Link>
+          </div>
         </nav>
       </header>
 
@@ -169,6 +177,40 @@ export function SeoPageContent({
           ))}
         </div>
 
+        {comparison ? (
+          <section className="mt-8 overflow-hidden rounded-2xl border border-[#d9e7f6] bg-white">
+            <div className="p-6 md:p-8">
+              <h2 className="text-2xl font-black tracking-tight md:text-3xl">
+                {comparison.caption}
+              </h2>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-left text-sm">
+                <thead className="bg-[#eef9ff] text-[#07143f]">
+                  <tr>
+                    {comparison.headers.map((header) => (
+                      <th className="px-6 py-4 font-black" key={header} scope="col">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="text-[#415574]">
+                  {comparison.rows.map((row) => (
+                    <tr className="border-t border-[#d9e7f6]" key={row[0]}>
+                      {row.map((cell, index) => (
+                        <td className="px-6 py-4 align-top leading-6" key={`${row[0]}-${index}`}>
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        ) : null}
+
         <section className="mt-8 rounded-2xl border border-[#d9e7f6] bg-white p-6 md:p-8">
           <h2 className="text-2xl font-black tracking-tight md:text-3xl">
             Frequently asked questions
@@ -189,14 +231,7 @@ export function SeoPageContent({
             PayClear is available on Google Play. The App Store version is coming soon.
           </p>
           <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <a
-              className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#2b7cff] px-6 py-3 text-center text-sm font-bold text-white sm:w-auto"
-              href={`https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=${path.replace("/", "")}`}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Get it on Google Play
-            </a>
+            <GooglePlayBadge campaign={`${path.replace("/", "")}_article`} />
             <span className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 px-6 py-3 text-center text-sm font-bold text-[#dce8ff] sm:w-auto">
               App Store coming soon
             </span>

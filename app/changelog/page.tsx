@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Product updates and release notes for PayClear, the private manual subscription tracker.",
   alternates: {
     canonical: "/changelog",
+    languages: { "en-US": "/changelog", "en-CA": "/changelog", "x-default": "/changelog" },
   },
 };
 
