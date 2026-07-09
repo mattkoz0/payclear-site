@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { seoLandingPages } from "./seo-pages";
 
 const baseUrl = "https://www.pay-clear.com";
-const lastModified = new Date("2026-06-14");
+const lastModified = new Date("2026-07-09");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -11,6 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "daily",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/download`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pricing`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/privacy`,

@@ -4,18 +4,28 @@ import Link from "next/link";
 import { seoLandingPages } from "./seo-pages";
 
 export const metadata: Metadata = {
-  title: "Private Subscription Tracker Without Bank Linking",
+  title: {
+    absolute:
+      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
+  },
   description:
-    "PayClear helps you track subscriptions, free trials and recurring payments privately without linking your bank or creating an account.",
+    "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/",
+      "en-CA": "/",
+      "x-default": "/",
+    },
   },
   openGraph: {
-    title: "PayClear | Private Subscription Tracker Without Bank Linking",
+    title:
+      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
     description:
-      "Track renewals, free trials, recurring bills and subscription spending with a private, local-first mobile app.",
+      "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
     url: "https://www.pay-clear.com",
     siteName: "PayClear",
+    locale: "en_US",
     type: "website",
   },
 };
@@ -110,6 +120,57 @@ const faqs = [
     answer:
       "No. PayClear has a free plan and an optional one-time Lifetime unlock for premium features.",
   },
+  {
+    question: "What subscriptions can I track with PayClear?",
+    answer:
+      "You can track any recurring payment: streaming services like Netflix, Hulu, HBO Max and Disney+, music apps like Spotify and Apple Music, cloud storage, AI tools, software, gaming, fitness memberships and more.",
+  },
+  {
+    question: "Is PayClear really free?",
+    answer:
+      "Yes. The free plan lets you track up to 5 active services with core reminders, dashboard, backup, restore and CSV export. Premium features are available through a one-time Lifetime purchase.",
+  },
+  {
+    question: "How does PayClear remind me about renewals?",
+    answer:
+      "PayClear uses local device notifications. You can schedule one or more reminders before each renewal date. No server, no account and no internet connection required for reminders to work.",
+  },
+  {
+    question: "Can I track subscriptions in different currencies?",
+    answer:
+      "Yes. PayClear supports multiple currencies so you can track subscriptions billed in USD, CAD, EUR, GBP and other currencies side by side.",
+  },
+  {
+    question: "Does PayClear sell my data?",
+    answer:
+      "No. PayClear is private by design. Your subscription data stays on your device. PayClear does not collect, store or sell your financial information.",
+  },
+  {
+    question: "How do I split a shared subscription with PayClear?",
+    answer:
+      "Use the bill splitter feature to calculate each person's share of a recurring cost. You can copy or share a clean payment card with the breakdown.",
+  },
+  {
+    question:
+      "What is the difference between PayClear and Rocket Money or Truebill?",
+    answer:
+      "Rocket Money (formerly Truebill) requires bank access through Plaid to scan your transactions. PayClear is manual by design: you add only the subscriptions you want to track, without sharing bank credentials or transaction history.",
+  },
+  {
+    question: "Can I export my subscription data?",
+    answer:
+      "Yes. PayClear supports CSV export and local backup and restore, so you always have control over your data.",
+  },
+  {
+    question: "How do I set spending limits for subscriptions?",
+    answer:
+      "Create weekly, monthly or yearly spending limits in PayClear. The app alerts you as your active subscriptions approach or exceed your configured limit.",
+  },
+  {
+    question: "Is PayClear available for iPhone?",
+    answer:
+      "PayClear is currently available on Google Play for Android. The Apple App Store version is in development and coming soon.",
+  },
 ];
 
 const structuredData = {
@@ -193,7 +254,7 @@ function StoreButtons({ compact = false }: { compact?: boolean }) {
         className={`inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#07143f] text-center font-bold text-white shadow-[0_18px_40px_rgba(7,20,63,0.2)] transition hover:bg-[#10245f] sm:w-auto ${
           compact ? "px-5 py-3 text-sm" : "px-6 py-3 text-sm"
         }`}
-        href="https://play.google.com/store/apps/details?id=com.payclear.app"
+        href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=homepage"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -230,6 +291,7 @@ function Header() {
           <a href="#privacy">Privacy</a>
           <a href="#screens">Screens</a>
           <Link href="/about">About</Link>
+          <Link href="/pricing">Pricing</Link>
           <Link href="/app">App</Link>
           <Link href="/support">Support</Link>
         </div>
@@ -253,6 +315,10 @@ function Footer() {
           <Link href="/subscription-tracker">Private Subscription Tracker</Link>
           <Link href="/free-trial-reminder">Free Trial Reminder</Link>
           <Link href="/subscription-tracker-android">Android App</Link>
+          <Link href="/best-subscription-tracker-app">Best Tracker App</Link>
+          <Link href="/cancel-unused-subscriptions">Cancel Subscriptions</Link>
+          <Link href="/download">Download</Link>
+          <Link href="/pricing">Pricing</Link>
           <Link href="/about">About PayClear</Link>
           <Link href="/app">App</Link>
           <Link href="/press">Press</Link>
@@ -298,7 +364,7 @@ export default function Home() {
               <p className="text-xs font-bold uppercase text-[#2b7cff] sm:text-sm">Track. Control. Save.</p>
             </div>
             <h1 className="max-w-4xl text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
-              Track subscriptions without linking your bank.
+              The free subscription tracker app that never touches your bank.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#415574] sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">
               PayClear helps you organize subscriptions, trials and recurring

@@ -12,6 +12,19 @@ export const metadata: Metadata = {
 
 const updates = [
   {
+    date: "July 9, 2026",
+    title: "US/CA market expansion and SEO overhaul",
+    notes: [
+      "Added 10 new SEO landing pages targeting US subscription tracking keywords.",
+      "Created competitor comparison pages: PayClear vs Rocket Money, Truebill and Mint.",
+      "Added dedicated /download page for conversion campaigns and /pricing page with plan details.",
+      "Expanded homepage FAQ from 3 to 13 questions for better Google rich snippet coverage.",
+      "Added hreflang targeting for US and Canada (en-US, en-CA).",
+      "Implemented security headers, UTM tracking on Google Play links and Android app deep linking metadata.",
+      "Updated web app manifest with Google Play related application hints.",
+    ],
+  },
+  {
     date: "June 14, 2026",
     title: "Website SEO and discovery update",
     notes: [

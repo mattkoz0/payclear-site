@@ -16,40 +16,69 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pay-clear.com"),
   title: {
-    default: "PayClear | Private Subscription Tracker Without Bank Linking",
+    default:
+      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
     template: "%s | PayClear",
   },
   description:
-    "Track subscriptions, free trials and recurring payments privately without linking your bank or creating an account.",
+    "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
   keywords: [
     "subscription tracker",
+    "subscription tracker app",
     "private subscription tracker",
-    "bill reminder",
+    "bill reminder app",
     "free trial reminder",
+    "free trial tracker",
     "recurring payment tracker",
-    "subscription manager",
+    "subscription manager app",
     "no bank subscription tracker",
+    "subscription tracker android",
+    "subscription tracker without plaid",
+    "cancel unused subscriptions",
+    "subscription cost calculator",
+    "best subscription tracker app",
   ],
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/",
+      "en-CA": "/",
+      "x-default": "/",
+    },
   },
   icons: {
     icon: "/PayClear_icon_512512.png",
     apple: "/PayClear_icon_512512.png",
   },
+  appLinks: {
+    android: {
+      package: "com.payclear.app",
+      app_name: "PayClear",
+    },
+    web: {
+      url: "https://www.pay-clear.com",
+      should_fallback: true,
+    },
+  },
+  other: {
+    "google-play-app": "app-id=com.payclear.app",
+  },
   openGraph: {
-    title: "PayClear | Private Subscription Tracker Without Bank Linking",
+    title:
+      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
     description:
-      "A private subscription tracker for renewals, free trials, shared bills and recurring spending insights without bank linking.",
+      "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
     url: "https://www.pay-clear.com",
     siteName: "PayClear",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PayClear | Private Subscription Tracker Without Bank Linking",
+    title:
+      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
     description:
-      "Track subscriptions, free trials and recurring payments privately without linking your bank.",
+      "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed.",
   },
 };
 

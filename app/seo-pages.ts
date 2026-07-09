@@ -63,7 +63,7 @@ export const seoLandingPages = [
     href: "/subscription-cancellation-savings",
     label: "Savings calculator",
     title: "Subscription cancellation savings",
-    text: "Estimate how much cancelling unused subscriptions could save over time.",
+    text: "Estimate how much canceling unused subscriptions could save over time.",
   },
   {
     href: "/recurring-payment-tracker",
@@ -88,5 +88,67 @@ export const seoLandingPages = [
     label: "Private tracker",
     title: "Best private subscription tracker",
     text: "Learn what makes a subscription tracker private and where PayClear fits.",
+  },
+  // New pages — US/CA focused
+  {
+    href: "/best-subscription-tracker-app",
+    label: "Best tracker app",
+    title: "Best subscription tracker app",
+    text: "Find the best subscription tracker app for privacy, features and value in 2026.",
+  },
+  {
+    href: "/subscription-manager-app",
+    label: "Manager app",
+    title: "Subscription manager app",
+    text: "Organize all your recurring payments in one private subscription manager.",
+  },
+  {
+    href: "/how-to-track-subscriptions",
+    label: "How to track",
+    title: "How to track subscriptions",
+    text: "Step-by-step guide to finding, organizing and managing every recurring payment.",
+  },
+  {
+    href: "/cancel-unused-subscriptions",
+    label: "Cancel and save",
+    title: "Cancel unused subscriptions",
+    text: "Find forgotten subscriptions and estimate how much you can save by canceling.",
+  },
+  {
+    href: "/free-trial-tracker-app",
+    label: "Trial tracker",
+    title: "Free trial tracker app",
+    text: "Track free trial end dates so you never get charged for something you did not want.",
+  },
+  {
+    href: "/subscription-tracker-app-free",
+    label: "Free app",
+    title: "Free subscription tracker app",
+    text: "Track subscriptions for free with core reminders, dashboard and CSV export.",
+  },
+  {
+    href: "/manage-recurring-payments",
+    label: "Recurring payments",
+    title: "Manage recurring payments",
+    text: "Track bills, subscriptions and regular charges in one private dashboard.",
+  },
+  // Competitor comparison pages
+  {
+    href: "/payclear-vs-rocket-money",
+    label: "vs Rocket Money",
+    title: "PayClear vs Rocket Money",
+    text: "Compare PayClear's private manual tracking with Rocket Money's bank-connected model.",
+  },
+  {
+    href: "/payclear-vs-truebill",
+    label: "vs Truebill",
+    title: "PayClear vs Truebill",
+    text: "Truebill (now Rocket Money) vs PayClear — bank scanning vs manual privacy-first tracking.",
+  },
+  {
+    href: "/payclear-vs-mint",
+    label: "vs Mint",
+    title: "PayClear vs Mint",
+    text: "A focused subscription tracker alternative for former Mint users without bank linking.",
   },
 ];

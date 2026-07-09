@@ -191,7 +191,7 @@ export function SeoPageContent({
           <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <a
               className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#2b7cff] px-6 py-3 text-center text-sm font-bold text-white sm:w-auto"
-              href="https://play.google.com/store/apps/details?id=com.payclear.app"
+              href={`https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=${path.replace("/", "")}`}
               rel="noopener noreferrer"
               target="_blank"
             >

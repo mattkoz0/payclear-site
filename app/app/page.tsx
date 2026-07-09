@@ -72,7 +72,7 @@ export default function AppPage() {
             </p>
             <a
               className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#07143f] px-6 py-3 text-sm font-bold text-white"
-              href="https://play.google.com/store/apps/details?id=com.payclear.app"
+              href="https://play.google.com/store/apps/details?id=com.payclear.app&utm_source=website&utm_medium=cta_button&utm_campaign=app"
               rel="noopener noreferrer"
               target="_blank"
             >
