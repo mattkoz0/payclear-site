@@ -34,6 +34,9 @@ Key pages:
 - https://www.pay-clear.com/payclear-vs-rocket-money
 - https://www.pay-clear.com/payclear-vs-truebill
 - https://www.pay-clear.com/payclear-vs-mint
+- https://www.pay-clear.com/payclear-vs-bobby-app
+- https://www.pay-clear.com/payclear-vs-trim
+- https://www.pay-clear.com/payclear-vs-copilot-money
 - https://www.pay-clear.com/stop-wasting-money-subscriptions
 - https://www.pay-clear.com/subscription-cost-calculator
 - https://www.pay-clear.com/family-subscription-manager

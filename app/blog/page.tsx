@@ -20,6 +20,12 @@ export const metadata: Metadata = {
       "Practical guides for tracking subscriptions, free trials, recurring bills, and household spending privately.",
     url: "https://www.pay-clear.com/blog",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "PayClear Blog — Subscription Tracking Guides",
+    description:
+      "Practical guides for tracking subscriptions, free trials, recurring bills, and household spending privately.",
+  },
 };
 
 const blogStructuredData = {

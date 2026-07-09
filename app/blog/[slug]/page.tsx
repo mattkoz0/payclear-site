@@ -40,6 +40,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [`https://www.pay-clear.com${path}/opengraph-image`],
+    },
   };
 }
 
@@ -66,7 +72,13 @@ export default async function BlogPostPage({ params }: Props) {
       url: "https://www.pay-clear.com/",
     },
     publisher: {
-      "@id": "https://www.pay-clear.com/#organization",
+      "@type": "Organization",
+      name: "PayClear",
+      url: "https://www.pay-clear.com/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.pay-clear.com/PayClear_icon_512512.png",
+      },
     },
     isPartOf: {
       "@id": "https://www.pay-clear.com/blog/#blog",

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "./components/google-analytics";
 import { ResourceHints } from "./components/resource-hints";
+import { WebVitals } from "./components/web-vitals";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -107,7 +108,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ResourceHints />
         {gaMeasurementId ? (
-          <GoogleAnalytics measurementId={gaMeasurementId} />
+          <>
+            <GoogleAnalytics measurementId={gaMeasurementId} />
+            <WebVitals />
+          </>
         ) : null}
         {children}
         <Analytics />

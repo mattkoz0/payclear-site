@@ -6,7 +6,7 @@
 
 > **Kontekst techniczny**: Next.js 16.2.6, React 19, TailwindCSS 4, hosting Vercel, domena `pay-clear.com`
 
-## Status wdrożenia — 9 lipca 2026
+## Status wdrożenia — 10 lipca 2026
 
 ### Wdrożone w kodzie
 
@@ -17,6 +17,7 @@
 - Blog z 10 poradnikami, Article schema, statycznym generowaniem, wewnętrznym linkowaniem, sitemapą, RSS i dynamicznymi obrazami OG dla artykułów.
 - Tabele porównawcze i ostrożniejsze, zaktualizowane copy dla Rocket Money/Truebill/Mint.
 - Konfigurowalny GA4 (`NEXT_PUBLIC_GA_MEASUREMENT_ID`) i endpoint Digital Asset Links, który aktywuje się po podaniu prawidłowego fingerprintu produkcyjnego.
+- Image sitemap dla screenshotów aplikacji oraz raportowanie realnych Core Web Vitals (LCP, CLS, INP i pozostałych) do GA4 po jego aktywacji.
 
 ### Wymaga działania poza repozytorium lub danych właściciela aplikacji
 
@@ -219,6 +220,7 @@
 ### 2.3 Rozbudować FAQ na stronie głównej
 **Plik**: `app/page.tsx` (linia 97-113)
 **Opis**: Tylko 3 FAQ. Więcej pytań = więcej szans na rich snippets w Google.
+> **Aktualizacja, lipiec 2026**: Google nie wyświetla już FAQ rich results dla zwykłych stron. FAQ pozostają na stronie dla użytkowników i systemów AI, ale nie należy dodawać ich wyłącznie po to, by zwiększać widoczność w wynikach Google. Źródło: https://developers.google.com/search/blog/2023/08/howto-faq-changes
 **Kroki**:
 - [ ] Dodać minimum 7-10 dodatkowych FAQ:
   - "What subscriptions can I track with PayClear?"

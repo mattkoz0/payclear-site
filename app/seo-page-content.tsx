@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { blogPosts } from "./blog/posts";
 import { GooglePlayBadge } from "./components/google-play-badge";
 import { seoLandingPages } from "./seo-pages";
 
@@ -25,6 +26,43 @@ type SeoPageProps = {
   }>;
 };
 
+function relatedBlogPosts(path: string) {
+  const slugs = path.includes("trial") || path.includes("reminder")
+    ? [
+        "free-trial-tracker-never-get-charged",
+        "how-to-track-all-subscriptions",
+        "how-to-cancel-unused-subscriptions",
+      ]
+    : path.includes("streaming") || path.includes("family") || path.includes("split")
+      ? [
+          "streaming-subscription-costs-2026",
+          "canadian-subscription-costs-track-save",
+          "subscription-fatigue-north-america",
+        ]
+      : path.includes("spending") || path.includes("calculator") || path.includes("cancel") || path.includes("wasting")
+        ? [
+            "americans-subscription-spending-2026",
+            "how-to-cancel-unused-subscriptions",
+            "subscriptions-americans-forget-about",
+          ]
+        : path.includes("plaid") || path.includes("bank") || path.includes("private") || path.includes("login") || path.includes("vs-")
+          ? [
+              "manual-vs-automatic-subscription-tracking",
+              "best-subscription-tracker-apps-android-2026",
+              "how-to-track-all-subscriptions",
+            ]
+          : [
+              "how-to-track-all-subscriptions",
+              "subscriptions-americans-forget-about",
+              "best-subscription-tracker-apps-android-2026",
+            ];
+
+  return slugs.flatMap((slug) => {
+    const post = blogPosts.find((item) => item.slug === slug);
+    return post ? [post] : [];
+  });
+}
+
 export function SeoPageContent({
   eyebrow,
   title,
@@ -37,6 +75,7 @@ export function SeoPageContent({
   faqs,
 }: SeoPageProps) {
   const pageUrl = `https://www.pay-clear.com${path}`;
+  const relatedPosts = relatedBlogPosts(path);
   const pageFaqs = faqs ?? [
     {
       question: `Can I use PayClear as a ${breadcrumb.toLowerCase()} without linking my bank?`,
@@ -151,6 +190,12 @@ export function SeoPageContent({
           <aside className="rounded-2xl border border-[#d9e7f6] bg-white p-5 shadow-[0_14px_40px_rgba(7,20,63,0.06)]">
             <p className="text-sm font-black uppercase text-[#2b7cff]">Explore PayClear</p>
             <div className="mt-4 grid gap-3">
+              <Link
+                className="rounded-xl bg-[#07143f] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#10245f]"
+                href="/download"
+              >
+                Download PayClear for Android
+              </Link>
               {seoLandingPages.filter((page) => page.href !== path).slice(0, 6).map((page) => (
                 <Link
                   className="rounded-xl border border-[#d9e7f6] px-4 py-3 text-sm font-bold text-[#07143f] transition hover:border-[#2b7cff]"
@@ -176,6 +221,27 @@ export function SeoPageContent({
             </section>
           ))}
         </div>
+
+        <section className="mt-8 rounded-2xl border border-[#d9e7f6] bg-white p-6 md:p-8">
+          <p className="text-sm font-black uppercase text-[#7b4dff]">Further reading</p>
+          <h2 className="mt-2 text-2xl font-black tracking-tight md:text-3xl">
+            Practical subscription tracking guides
+          </h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {relatedPosts.map((post) => (
+              <Link
+                className="rounded-xl border border-[#d9e7f6] bg-[#fbfdff] p-5 transition hover:border-[#2b7cff]"
+                href={`/blog/${post.slug}`}
+                key={post.slug}
+              >
+                <p className="text-xs font-bold uppercase tracking-wide text-[#7b4dff]">
+                  {post.category}
+                </p>
+                <h3 className="mt-2 text-base font-black leading-6">{post.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {comparison ? (
           <section className="mt-8 overflow-hidden rounded-2xl border border-[#d9e7f6] bg-white">

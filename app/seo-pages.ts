@@ -181,4 +181,22 @@ export const seoLandingPages = [
     title: "PayClear vs Mint",
     text: "A focused subscription tracker alternative for former Mint users without bank linking.",
   },
+  {
+    href: "/payclear-vs-bobby-app",
+    label: "vs Bobby",
+    title: "PayClear vs Bobby app",
+    text: "Compare PayClear with Bobby and find an Android subscription tracker alternative.",
+  },
+  {
+    href: "/payclear-vs-trim",
+    label: "vs Trim",
+    title: "PayClear vs Trim",
+    text: "Compare a private Android tracker with Trim's subscription-manager approach.",
+  },
+  {
+    href: "/payclear-vs-copilot-money",
+    label: "vs Copilot Money",
+    title: "PayClear vs Copilot Money",
+    text: "Compare focused Android subscription tracking with broad linked-account finance tools.",
+  },
 ];
