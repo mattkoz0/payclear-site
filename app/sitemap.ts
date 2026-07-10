@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { additionalSeoPages } from "./additional-seo-pages";
 import { blogPosts } from "./blog/posts";
 import { seoLandingPages } from "./seo-pages";
 
@@ -93,6 +94,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: index === 0 ? 0.9 : 0.85,
+    })),
+    ...additionalSeoPages.map((page) => ({
+      url: `${baseUrl}/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
     ...blogPosts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
