@@ -6,6 +6,7 @@ export type AdditionalSeoPage = {
   intro: string;
   breadcrumb: string;
   cta: string;
+  calculator?: boolean;
   sections: Array<{
     title: string;
     body: string[];
@@ -89,6 +90,7 @@ export const additionalSeoPages: AdditionalSeoPage[] = [
       "A subscription cost calculator helps turn individual prices into a useful total. List every recurring payment, convert each to a monthly amount, and review the total next to the value you get from it. That simple calculation can reveal renewal risks, duplicate services, and realistic opportunities to save.",
     breadcrumb: "Subscription cost calculator",
     cta: "Track subscription costs and renewal dates in one private app.",
+    calculator: true,
     sections: [
       {
         title: "How to calculate your total subscription cost",

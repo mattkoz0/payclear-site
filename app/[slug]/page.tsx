@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAdditionalSeoPage, additionalSeoPages } from "../additional-seo-pages";
+import { SubscriptionCostCalculator } from "../components/subscription-cost-calculator";
 import { SeoPageContent } from "../seo-page-content";
 
 type Props = {
@@ -55,6 +56,7 @@ export default async function AdditionalSeoPage({ params }: Props) {
       path={`/${page.slug}`}
       sections={page.sections}
       title={page.title}
+      tool={page.calculator ? <SubscriptionCostCalculator /> : undefined}
     />
   );
 }

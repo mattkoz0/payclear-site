@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { blogPosts } from "./blog/posts";
 import { GooglePlayBadge } from "./components/google-play-badge";
 import { seoLandingPages } from "./seo-pages";
@@ -15,6 +16,7 @@ type SeoPageProps = {
     body: string[];
   }>;
   cta: string;
+  tool?: ReactNode;
   comparison?: {
     caption: string;
     headers: [string, string, string];
@@ -71,6 +73,7 @@ export function SeoPageContent({
   breadcrumb,
   sections,
   cta,
+  tool,
   comparison,
   faqs,
 }: SeoPageProps) {
@@ -208,6 +211,8 @@ export function SeoPageContent({
             </div>
           </aside>
         </div>
+
+        {tool ? <div className="mt-8">{tool}</div> : null}
 
         <div className="mt-12 grid gap-5">
           {sections.map((section) => (

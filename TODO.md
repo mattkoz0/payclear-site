@@ -18,6 +18,7 @@
 - Tabele porównawcze i ostrożniejsze, zaktualizowane copy dla Rocket Money/Truebill/Mint.
 - Konfigurowalny GA4 (`NEXT_PUBLIC_GA_MEASUREMENT_ID`) i endpoint Digital Asset Links, który aktywuje się po podaniu prawidłowego fingerprintu produkcyjnego.
 - Image sitemap dla screenshotów aplikacji oraz raportowanie realnych Core Web Vitals (LCP, CLS, INP i pozostałych) do GA4 po jego aktywacji.
+- Działający, lokalny Subscription Cost Calculator na `/subscription-cost-calculator`: częstotliwości od tygodnia do roku, USD/CAD oraz scenariusz oszczędności bez wysyłania danych użytkownika.
 
 ### Wymaga działania poza repozytorium lub danych właściciela aplikacji
 
