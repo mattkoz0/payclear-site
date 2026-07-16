@@ -19,6 +19,11 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "https://play.google.com/store/apps/details?id=com.payclear.app",
         id: "com.payclear.app",
       },
+      {
+        platform: "itunes",
+        url: "https://apps.apple.com/us/app/payclear-subscription-tracker/id6780266678",
+        id: "6780266678",
+      },
     ],
     icons: [
       {

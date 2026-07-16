@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { GooglePlayBadge } from "../components/google-play-badge";
+import { StoreBadges } from "../components/store-badges";
+import { StoreQrCode } from "../components/store-qr-codes";
+import { appStoreListingUrl } from "../app-store";
+import { googlePlayListingUrl } from "../google-play";
 
 export const metadata: Metadata = {
   title: "PayClear App",
   description:
-    "Download PayClear for Android and track subscriptions, free trials and recurring payments privately.",
+    "Download PayClear for Android or iPhone and track subscriptions, free trials and recurring payments privately.",
   alternates: {
     canonical: "/app",
     languages: { "en-US": "/app", "en-CA": "/app", "x-default": "/app" },
@@ -14,14 +17,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PayClear App",
     description:
-      "PayClear is a private subscription tracker for Android without bank linking.",
+      "PayClear is a private subscription tracker for Android and iPhone without bank linking.",
     url: "https://www.pay-clear.com/app",
   },
 };
 
 const facts = [
   "Android available on Google Play",
-  "App Store coming soon",
+  "iPhone available on the App Store",
   "Manual subscription tracking",
   "No bank connection",
   "No account required for core tracking",
@@ -37,9 +40,9 @@ const structuredData = {
   name: "PayClear",
   applicationCategory: "FinanceApplication",
   applicationSubCategory: "Subscription tracker",
-  operatingSystem: "Android",
+  operatingSystem: "Android, iOS",
   url: "https://www.pay-clear.com/app",
-  downloadUrl: "https://play.google.com/store/apps/details?id=com.payclear.app",
+  downloadUrl: [googlePlayListingUrl, appStoreListingUrl],
   image: "https://www.pay-clear.com/PayClear_icon_512512.png",
   description:
     "PayClear is a private manual subscription tracker for recurring payments, renewals and free trials without bank linking.",
@@ -65,14 +68,14 @@ export default function AppPage() {
           <div>
             <p className="text-sm font-bold uppercase text-[#7b4dff]">PayClear app</p>
             <h1 className="mt-4 text-4xl font-black leading-tight tracking-tight md:text-6xl">
-              Download PayClear on Google Play.
+              Download PayClear on Android or iPhone.
             </h1>
             <p className="mt-6 text-lg leading-8 text-[#415574]">
-              PayClear is an Android app for tracking subscriptions, free trials
+              PayClear is an Android and iPhone app for tracking subscriptions, free trials
               and recurring payments privately. It uses manual tracking instead
               of bank linking or transaction scanning.
             </p>
-            <GooglePlayBadge campaign="app" className="mt-8" />
+            <StoreBadges campaign="app" className="mt-8 items-start" priority />
           </div>
           <div className="relative mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-[2rem] border border-[#d9e7f6] bg-white shadow-[0_18px_55px_rgba(7,20,63,0.1)]">
             <Image
@@ -85,6 +88,8 @@ export default function AppPage() {
             />
           </div>
         </div>
+
+        <StoreQrCode className="mt-10" />
 
         <section className="mt-12 grid gap-4 sm:grid-cols-2">
           {facts.map((fact) => (

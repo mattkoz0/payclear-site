@@ -14,9 +14,10 @@ export const metadata: Metadata = {
 const facts = [
   ["Product", "PayClear"],
   ["Category", "Private manual subscription tracker"],
-  ["Platform", "Android available now; App Store coming soon"],
+  ["Platform", "Android on Google Play; iPhone on the Apple App Store"],
   ["Website", "https://www.pay-clear.com"],
   ["Google Play", "https://play.google.com/store/apps/details?id=com.payclear.app"],
+  ["Apple App Store", "https://apps.apple.com/us/app/payclear-subscription-tracker/id6780266678"],
   ["Contact", "support@pay-clear.com"],
 ];
 
@@ -58,7 +59,7 @@ export default function PressPage() {
         <section className="mt-8 rounded-2xl border border-[#d9e7f6] bg-white p-6 md:p-8">
           <h2 className="text-2xl font-black">Suggested short description</h2>
           <p className="mt-4 leading-8 text-[#415574]">
-            PayClear is a private manual subscription tracker for Android that
+            PayClear is a private manual subscription tracker for Android and iPhone that
             helps users track renewals, free trials, shared bills and recurring
             payments without linking a bank account.
           </p>

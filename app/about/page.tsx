@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { GooglePlayBadge } from "../components/google-play-badge";
+import { StoreBadges } from "../components/store-badges";
 
 export const metadata: Metadata = {
   title: "About PayClear",
@@ -105,11 +105,11 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-8 rounded-2xl bg-[#07143f] p-6 text-white md:p-8">
-          <h2 className="text-2xl font-black">Available on Google Play</h2>
+          <h2 className="text-2xl font-black">Available on Android and iPhone</h2>
           <p className="mt-4 max-w-3xl leading-8 text-[#dce8ff]">
-            PayClear is available for Android. The App Store version is coming soon.
+            Download PayClear from Google Play or the Apple App Store.
           </p>
-          <GooglePlayBadge campaign="about" className="mt-6" />
+          <StoreBadges campaign="about" className="mt-6 items-start" />
         </section>
       </article>
     </main>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { GooglePlayBadge } from "../components/google-play-badge";
+import { StoreBadges } from "../components/store-badges";
 
 export const metadata: Metadata = {
   title: "PayClear Pricing — Free Plan & One-Time Lifetime Unlock",
@@ -48,7 +48,7 @@ const structuredData = {
   "@type": "SoftwareApplication",
   name: "PayClear",
   applicationCategory: "FinanceApplication",
-  operatingSystem: "Android",
+  operatingSystem: "Android, iOS",
   url: "https://www.pay-clear.com/pricing",
   offers: [
     {
@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "What happens if I uninstall?",
     answer:
-      "Your Lifetime purchase is tied to your Google Play account. If you reinstall, you can restore your premium status through Google Play. Your subscription data should be backed up before uninstalling.",
+      "Your Lifetime purchase is tied to the Google Play or Apple account used for the purchase. If you reinstall, restore premium through the same store account. Your subscription data should be backed up before uninstalling.",
   },
   {
     question: "Will premium get more expensive?",
@@ -131,7 +131,7 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
-            <GooglePlayBadge campaign="pricing_free" className="mt-8 w-full" />
+            <StoreBadges campaign="pricing_free" className="mt-8 sm:flex-col" />
           </div>
 
           <div className="rounded-2xl border border-[#a78bfa] bg-[#07143f] p-7 text-white shadow-[0_18px_50px_rgba(7,20,63,0.18)]">
@@ -156,7 +156,7 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
-            <GooglePlayBadge campaign="pricing_lifetime" className="mt-8 w-full" />
+            <StoreBadges campaign="pricing_lifetime" className="mt-8 sm:flex-col" />
           </div>
         </div>
 

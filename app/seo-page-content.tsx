@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { blogPosts } from "./blog/posts";
-import { GooglePlayBadge } from "./components/google-play-badge";
+import { StoreBadges } from "./components/store-badges";
 import { seoLandingPages } from "./seo-pages";
 
 type SeoPageProps = {
@@ -93,7 +93,7 @@ export function SeoPageContent({
     {
       question: "Is PayClear available on Android and iPhone?",
       answer:
-        "PayClear is available on Google Play for Android. The Apple App Store version is planned, but it is not available yet.",
+        "PayClear is available on Google Play for Android and on the Apple App Store for iPhone.",
     },
   ];
   const pageData = {
@@ -299,14 +299,12 @@ export function SeoPageContent({
         <section className="mt-8 rounded-2xl bg-[#07143f] p-6 text-white md:p-9">
           <h2 className="text-2xl font-black md:text-3xl">{cta}</h2>
           <p className="mt-4 max-w-3xl leading-8 text-[#dce8ff]">
-            PayClear is available on Google Play. The App Store version is coming soon.
+            PayClear is available on Google Play and the Apple App Store.
           </p>
-          <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <GooglePlayBadge campaign={`${path.replace("/", "")}_article`} />
-            <span className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 px-6 py-3 text-center text-sm font-bold text-[#dce8ff] sm:w-auto">
-              App Store coming soon
-            </span>
-          </div>
+          <StoreBadges
+            campaign={`${path.replace("/", "")}_article`}
+            className="mt-6 items-start"
+          />
         </section>
       </article>
     </main>

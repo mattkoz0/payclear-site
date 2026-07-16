@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { GooglePlayBadge } from "./components/google-play-badge";
 import { MobileStickyPlayCta } from "./components/mobile-sticky-play-cta";
+import { StoreBadges } from "./components/store-badges";
+import { StoreQrCode } from "./components/store-qr-codes";
+import { appStoreListingUrl } from "./app-store";
+import { googlePlayListingUrl } from "./google-play";
 import { seoLandingPages } from "./seo-pages";
 
 export const metadata: Metadata = {
   title: {
     absolute:
-      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
+      "PayClear — Free Subscription Tracker App for Android & iPhone",
   },
   description:
-    "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
+    "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear on Google Play or the App Store.",
   alternates: {
     canonical: "/",
     languages: {
@@ -22,9 +25,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
+      "PayClear — Free Subscription Tracker App for Android & iPhone",
     description:
-      "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
+      "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear on Google Play or the App Store.",
     url: "https://www.pay-clear.com",
     siteName: "PayClear",
     locale: "en_US",
@@ -171,7 +174,7 @@ const faqs = [
   {
     question: "Is PayClear available for iPhone?",
     answer:
-      "PayClear is currently available on Google Play for Android. The Apple App Store version is in development and coming soon.",
+      "Yes. PayClear is available on Google Play for Android and on the Apple App Store for iPhone.",
   },
 ];
 
@@ -184,7 +187,7 @@ const structuredData = {
       name: "PayClear",
       url: "https://www.pay-clear.com/",
       logo: "https://www.pay-clear.com/PayClear_icon_512512.png",
-      sameAs: ["https://play.google.com/store/apps/details?id=com.payclear.app"],
+      sameAs: [googlePlayListingUrl, appStoreListingUrl],
     },
     {
       "@type": "WebSite",
@@ -203,9 +206,9 @@ const structuredData = {
       name: "PayClear",
       applicationCategory: "FinanceApplication",
       applicationSubCategory: "Subscription tracker",
-      operatingSystem: "Android",
+      operatingSystem: "Android, iOS",
       url: "https://www.pay-clear.com/",
-      downloadUrl: "https://play.google.com/store/apps/details?id=com.payclear.app",
+      downloadUrl: [googlePlayListingUrl, appStoreListingUrl],
       image: "https://www.pay-clear.com/PayClear_icon_512512.png",
       screenshot: [
         "https://www.pay-clear.com/payclear-dashboard-subscription-tracker.avif",
@@ -263,19 +266,10 @@ const structuredData = {
 
 function StoreButtons({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-      <GooglePlayBadge
-        campaign={compact ? "homepage_footer" : "homepage"}
-        className="w-full sm:w-auto"
-      />
-      <span
-        className={`inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#bcd0ef] bg-white/80 text-center font-bold text-[#415574] sm:w-auto ${
-          compact ? "px-5 py-3 text-sm" : "px-6 py-3 text-sm"
-        }`}
-      >
-        App Store coming soon
-      </span>
-    </div>
+    <StoreBadges
+      campaign={compact ? "homepage_footer" : "homepage"}
+      priority={!compact}
+    />
   );
 }
 
@@ -720,10 +714,13 @@ export default function Home() {
               Take back control of recurring payments.
             </h2>
             <p className="mt-4 leading-7 text-[#53627a]">
-              Download PayClear on Google Play. The Apple App Store version is coming soon.
+              Download PayClear on Google Play or the Apple App Store.
             </p>
           </div>
           <StoreButtons compact />
+        </div>
+        <div className="mx-auto max-w-3xl px-5 pb-14">
+          <StoreQrCode />
         </div>
       </section>
 

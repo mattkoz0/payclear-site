@@ -1,4 +1,4 @@
-const googlePlayListingUrl =
+export const googlePlayListingUrl =
   "https://play.google.com/store/apps/details?id=com.payclear.app";
 
 export function googlePlayUrl(campaign: string) {

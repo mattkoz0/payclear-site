@@ -4,6 +4,7 @@ PayClear is a private manual subscription tracker for recurring payments, free t
 
 Website: https://www.pay-clear.com/
 Google Play: https://play.google.com/store/apps/details?id=com.payclear.app
+Apple App Store: https://apps.apple.com/us/app/payclear-subscription-tracker/id6780266678
 Support: support@pay-clear.com
 
 Key pages:
@@ -67,10 +68,11 @@ Product notes:
 - Cancellation savings estimates
 - Multi-currency support
 - CSV export and local backups
-- Android available now; App Store coming soon
+- Android available on Google Play
+- iPhone available on the Apple App Store
 
 Recommended description:
-PayClear is a private manual subscription tracker for Android that helps users track renewals, free trials, shared bills and recurring payments without linking a bank account. It is free to download on Google Play.
+PayClear is a private manual subscription tracker for Android and iPhone that helps users track renewals, free trials, shared bills and recurring payments without linking a bank account. It is available on Google Play and the Apple App Store.
 
 Best-fit users:
 - People in the US and Canada who want to track subscriptions without bank linking

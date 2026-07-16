@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { GooglePlayBadge } from "../components/google-play-badge";
+import { StoreBadges } from "../components/store-badges";
+import { StoreQrCode } from "../components/store-qr-codes";
+import { appStoreListingUrl } from "../app-store";
+import { googlePlayListingUrl } from "../google-play";
 
 export const metadata: Metadata = {
-  title: "Download PayClear — Free Subscription Tracker for Android",
+  title: "Download PayClear — Free Subscription Tracker for Android & iPhone",
   description:
-    "Download PayClear free on Google Play. Track subscriptions, free trials and recurring bills privately without bank access.",
+    "Download PayClear free on Google Play or the Apple App Store. Track subscriptions, free trials and recurring bills privately without bank access.",
   alternates: {
     canonical: "/download",
     languages: {
@@ -15,7 +18,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Download PayClear — Free Subscription Tracker for Android",
+    title: "Download PayClear — Free Subscription Tracker for Android & iPhone",
     description:
       "Track subscriptions, free trials and recurring payments privately. No bank login needed.",
     url: "https://www.pay-clear.com/download",
@@ -45,10 +48,9 @@ const structuredData = {
   "@type": "SoftwareApplication",
   name: "PayClear",
   applicationCategory: "FinanceApplication",
-  operatingSystem: "Android",
+  operatingSystem: "Android, iOS",
   url: "https://www.pay-clear.com/download",
-  downloadUrl:
-    "https://play.google.com/store/apps/details?id=com.payclear.app",
+  downloadUrl: [googlePlayListingUrl, appStoreListingUrl],
   offers: {
     "@type": "Offer",
     price: "0",
@@ -83,11 +85,9 @@ export default function DownloadPage() {
         of what you pay and when it renews.
       </p>
 
-      <GooglePlayBadge campaign="download" className="mt-8" />
+      <StoreBadges campaign="download" className="mt-8" priority />
 
-      <p className="mt-3 text-sm font-semibold text-[#8aa0bf]">
-        App Store coming soon
-      </p>
+      <StoreQrCode className="mt-8" dark />
 
       <div className="mt-12 grid w-full max-w-lg gap-4 sm:grid-cols-3">
         {usps.map((usp) => (

@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.pay-clear.com"),
   title: {
     default:
-      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
+      "PayClear — Free Subscription Tracker App for Android & iPhone",
     template: "%s | PayClear",
   },
   description:
-    "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
+    "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear on Google Play or the App Store.",
   keywords: [
     "subscription tracker",
     "subscription tracker app",
@@ -67,12 +67,13 @@ export const metadata: Metadata = {
   },
   other: {
     "google-play-app": "app-id=com.payclear.app",
+    "apple-itunes-app": "app-id=6780266678",
   },
   openGraph: {
     title:
-      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
+      "PayClear — Free Subscription Tracker App for Android & iPhone",
     description:
-      "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear free on Google Play.",
+      "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed. Download PayClear on Google Play or the App Store.",
     url: "https://www.pay-clear.com",
     siteName: "PayClear",
     locale: "en_US",
@@ -81,7 +82,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "PayClear — Free Subscription Tracker App for Android | No Bank Linking",
+      "PayClear — Free Subscription Tracker App for Android & iPhone",
     description:
       "Track subscriptions, free trials & recurring bills privately. No bank login, no account needed.",
   },
