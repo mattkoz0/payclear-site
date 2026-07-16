@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MobileStickyPlayCta } from "./components/mobile-sticky-play-cta";
+import { MoreApps, makerApps } from "./components/more-apps";
 import { StoreBadges } from "./components/store-badges";
 import { StoreQrCode } from "./components/store-qr-codes";
 import { appStoreListingUrl } from "./app-store";
@@ -313,7 +314,25 @@ function Footer() {
   return (
     <footer className="border-t border-[#d9e7f6] bg-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#53627a] md:flex-row md:items-center md:justify-between">
-        <p>© 2026 PayClear. Track. Control. Save.</p>
+        <div>
+          <p>© 2026 PayClear. Track. Control. Save.</p>
+          <p className="mt-2">
+            More from the maker:{" "}
+            {makerApps.map((app, index) => (
+              <span key={app.url}>
+                {index > 0 ? " · " : null}
+                <a
+                  className="font-semibold text-[#2b7cff]"
+                  href={app.url}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {app.name}
+                </a>
+              </span>
+            ))}
+          </p>
+        </div>
         <div className="flex flex-wrap gap-5 font-semibold">
           <Link href="/subscription-tracker">Private Subscription Tracker</Link>
           <Link href="/free-trial-reminder">Free Trial Reminder</Link>
@@ -379,6 +398,7 @@ export default function Home() {
             <div className="mt-8">
               <StoreButtons />
             </div>
+            <StoreQrCode className="mt-4 sm:mx-0" compact />
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link className="text-center text-sm font-bold text-[#2b7cff]" href="/subscription-tracker">
                 Private subscription tracker
@@ -740,6 +760,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <MoreApps />
 
       <Footer />
       <MobileStickyPlayCta />

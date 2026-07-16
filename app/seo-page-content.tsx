@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { blogPosts } from "./blog/posts";
+import { MoreApps } from "./components/more-apps";
 import { StoreBadges } from "./components/store-badges";
 import { seoLandingPages } from "./seo-pages";
 
@@ -306,6 +307,8 @@ export function SeoPageContent({
             className="mt-6 items-start"
           />
         </section>
+
+        <MoreApps variant="compact" />
       </article>
     </main>
   );
