@@ -188,7 +188,11 @@ const structuredData = {
       name: "PayClear",
       url: "https://www.pay-clear.com/",
       logo: "https://www.pay-clear.com/PayClear_icon_512512.png",
-      sameAs: [googlePlayListingUrl, appStoreListingUrl],
+      sameAs: [
+        googlePlayListingUrl,
+        appStoreListingUrl,
+        "https://www.producthunt.com/products/payclear-2",
+      ],
     },
     {
       "@type": "WebSite",
@@ -398,6 +402,20 @@ export default function Home() {
             <div className="mt-8">
               <StoreButtons />
             </div>
+            <a
+              className="mt-4 inline-block"
+              href="https://www.producthunt.com/products/payclear-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-payclear-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="PayClear - Private subscription tracker. No bank link, no account. | Product Hunt"
+                width={250}
+                height={54}
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1199445&theme=light&t=1784471228096"
+              />
+            </a>
             <StoreQrCode className="mt-4 sm:mx-0" compact />
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link className="text-center text-sm font-bold text-[#2b7cff]" href="/subscription-tracker">
